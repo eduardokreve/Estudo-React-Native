@@ -15,9 +15,9 @@ export default class LoginPage extends React.Component{
 
     //função que seta os valores para email e password (novos valores)
     onChangeHandler(field, value) {
-		this.setState ({
-			[field]:value
-		});
+	    this.setState ({
+		    [field]:value
+	    });
     }
 
     render() { //o que vai ser renderizado
@@ -30,16 +30,16 @@ export default class LoginPage extends React.Component{
                         value={this.state.email} //define o valor quando o usuario digitar
                         onChangeText = {value => this.onChangeHandler('email', value)}
 
-					/>
+				    />
                 </FormRow>
                 <FormRow> 
                     <TextInput 
                         style={styles.input}
                         placeholder = "******"
-						secureTextEntry
+					    secureTextEntry
                         value={this.state.password}
                         onChangeText = {value => this.onChangeHandler('password', value)}
-					/>
+				    />
                 </FormRow>
             </View>
         )
@@ -49,9 +49,9 @@ export default class LoginPage extends React.Component{
 //estilo 
 const styles = StyleSheet.create({
 	input: {
-		paddingLeft:5,
-		paddingRight: 5,
-		paddingBottom: 5,
-	}
+	    paddingLeft:5,
+	    paddingRight: 5,
+	    paddingBottom: 5,
+    }
 });
 
