@@ -8,7 +8,7 @@ const AppNavigator = createStackNavigator({
 		navigationOptions: {
 			title: 'Bem vindo',
 		}
-    },
+	},
 }, 
 {
 	defaultNavigationOptions: {
