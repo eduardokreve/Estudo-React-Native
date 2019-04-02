@@ -1,8 +1,6 @@
 import React from 'react';
-import {View, StyleSheet, TextInput, Button} from 'react-native'
-//import firebase from 'firebase';
-import firebase from '@firebase/app';
-import '@firebase/auth';
+import {View, StyleSheet, TextInput, Button, ActivityIndicator} from 'react-native'
+import firebase from 'firebase';
 
 import FormRow from '../components/FormRow' //importa o formulario para a pagina do login
 
@@ -13,6 +11,7 @@ export default class LoginPage extends React.Component {
 		this.state = { //seta os valores de email e password para vazio
 			email: '',
 			password: '',
+			isLoading: false,
 		}
 	}
 
@@ -28,15 +27,6 @@ export default class LoginPage extends React.Component {
 		};
 		firebase.initializeApp(config);
 
-		firebase
-			.auth()
-			.signInWithEmailAndPassword('teste@gmail.com', '123456')	
-			.then(user => {
-				console.log('Usuário autenticado', user); 
-			})
-			.catch(error => {
-				console.log('Usuario não encontrado', error);
-			})
 	}	
 	//função que seta os valores para email e password (novos valores)
 	onChangeHandler(field, value) {
@@ -46,7 +36,33 @@ export default class LoginPage extends React.Component {
 	}
 	 
 	tryLogin() {
-		console.log(this.state);
+		this.setState({ isLoading: true});	
+		const {email, password} = this.state;
+
+		firebase
+			.auth()
+			.signInWithEmailAndPassword(email, password)	
+			.then(user => {
+				console.log('Usuário autenticado', user); 
+			})
+			.catch(error => {
+				console.log('Usuario não encontrado', error);
+			})
+			.then(() => this.setState({ isLoading: false }))
+	}
+
+	renderButton() {
+		if (this.state.isLoading)
+			return <ActivityIndicator/>;
+
+		return (
+			<View style={styles.button}>
+				<Button 
+					title="Login"
+					onPress={() => this.tryLogin()} 
+				/>
+			</View>	
+		);
 	}
 
 	render() { //o que vai ser renderizado
@@ -69,12 +85,9 @@ export default class LoginPage extends React.Component {
 						onChangeText = {value => this.onChangeHandler('password', value)}
 					/>
 				</FormRow>
-				<View style={styles.button}>
-					<Button 
-						title="Login"
-						onPress={() => this.tryLogin()} 
-					/>
-				</View>	
+
+				{this.renderButton() }
+				
 			</View>
 		)
 	}    
