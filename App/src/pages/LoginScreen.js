@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, TextInput, Text, Button, Alert, ActivityIndicator} from 'react-native'
+import {View, StyleSheet, TextInput, Text, Button, Alert, ActivityIndicator} from 'react-native';
 import firebase from 'firebase';
 
 import FormRow from '../components/FormRow' //importa o formulario para a pagina do login
@@ -39,13 +39,21 @@ export default class LoginPage extends React.Component {
 		this.setState({ isLoading: true, message: ''});	
 		const {email, password} = this.state;
 
+		const loginUserSuccess = user => {
+			this.setState({message: "Sucesso!"});
+		}
+
+		const LoginUserFailed = error => {
+			this.setState({
+				message: this.getMessageByErrorCode(error.code)
+			});
+		}
+
+
 		firebase
 			.auth()
 			.signInWithEmailAndPassword(email, password)	
-			.then(user => {
-				//console.log('Usuário autenticado', user); 
-				this.setState({ message: 'Sucesso!'});
-			})
+			.then(loginUserSuccess)
 			.catch(error => {
 				if (error.code === 'auth/user-not-found') {
 					Alert.alert(
@@ -53,17 +61,24 @@ export default class LoginPage extends React.Component {
 						'Deseja criar um cadastro?',
 						[{
 							text: 'Não',
-							onPress: () => {}
+							onPress: () => console.log('Usuário não quer se cadastrar')
 						},
 						{
 							text: 'Concerteza',
-							onPress: () => {}
-						}]);
+							onPress: () => {
+								firebase
+									.auth()
+									.createUserWithEmailAndPassword(email, password)
+									.then(loginUserSuccess)
+									.catch(LoginUserFailed)
+							}
+						}],
+						{cancelable: false}
+					)
+					return;
 				}
 
-				this.setState({
-					message: this.getMessageByErrorCode(error.code) 
-				});
+				LoginUserFailed(error);
 			})
 			.then(() => this.setState({ isLoading: false }));
 	}
