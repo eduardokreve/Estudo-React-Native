@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-import TodoForm from './components/TodoForm'
+import TodoForm from './components/TodoForm';
 
 export default class TodoApp extends React.Component {
     render() {
