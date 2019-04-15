@@ -7,11 +7,11 @@ import Input from './Input';
 export default class TodoForm extends React.Component{
     render() {
         return (
-            <View>
-                <View>
+            <View style={styles.formContainer}>
+                <View style={styles.inputContainer}>
                     <Input/>
                 </View>
-                <View>
+                <View style={styles.buttonContainer}>
                     <Button 
                         onPress={() => console.log('Fui pressionado')}
                         title="Add"/>
@@ -20,3 +20,15 @@ export default class TodoForm extends React.Component{
         );
     }
 }
+
+const styles = StyleSheet.create({
+    formContainer: {
+        flexDirection: 'row'
+    },
+    inputContainer: {
+        flex:4
+    },
+    buttonContainer: {
+        flex:1
+    }
+});
