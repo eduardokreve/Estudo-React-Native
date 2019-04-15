@@ -1,6 +1,5 @@
 import React from 'react';
 import {TextInput, StyleSheet} from 'react-native';
-import { underline } from 'ansi-colors';
 
 
 const Input = ({onChangeText, value}) => (
