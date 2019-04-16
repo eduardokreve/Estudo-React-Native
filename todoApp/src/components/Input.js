@@ -8,8 +8,7 @@ const Input = ({onChangeText, value}) => (
         onChangeText={onChangeText}
         value={value} 
         underlineColorAndroid="#000"
-        />
-        
+    />
 );
 
 const styles = StyleSheet.create({
