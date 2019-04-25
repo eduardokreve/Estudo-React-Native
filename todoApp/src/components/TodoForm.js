@@ -2,32 +2,23 @@ import React from 'react';
 import {View, Button, StyleSheet} from 'react-native';
 import {connect} from 'react-redux'
 
-import {addTodo} from '../actions';
+import {addTodo, setTodoText} from '../actions';
 
 import Input from './Input';
 
 class TodoForm extends React.Component{
-    constructor(props) { //gerenciar o estado
-        super(props);
-
-        this.state = {
-            text: ' '
-        }
-    }
     //funcao
     onChangeText(text) {
-        this.setState({
-            text
-        });
+        this.props.dispatchSetTodoText(text);  
     }
     //funcao
     onPress() {
-        this.props.dispatchAddTodo(this.state.text);
-        this.setState({text: ''});
+        const {text} = this.props.todo;
+        this.props.dispatchAddTodo(text);
     }
 
     render() {
-        const { text } = this.state;
+        const { text } = this.props.todo;
 
         return (
             <View style={styles.formContainer}>
@@ -59,7 +50,16 @@ const styles = StyleSheet.create({
     }
 });
 
+const mapStateToProps = state => {
+    return {
+        todo: state.editingTodo
+    }
+}
 
-export default connect(null, {
-    dispatchAddTodo: addTodo
-})(TodoForm);
+export default connect(
+    mapStateToProps, 
+    {
+        dispatchAddTodo: addTodo,
+        dispatchSetTodoText: setTodoText
+    }
+)(TodoForm);
