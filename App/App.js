@@ -1,6 +1,6 @@
 import {createAppContainer, createStackNavigator} from 'react-navigation';
 
-import LoginScreen from './src/pages/LoginScreen' //importa a tela de login
+import LoginScreen from './src/pages/LoginPage' //importa a tela de login
 
 const AppNavigator = createStackNavigator({
 	'Login': {

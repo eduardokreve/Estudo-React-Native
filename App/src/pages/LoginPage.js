@@ -137,7 +137,7 @@ export default class LoginPage extends React.Component {
 				<FormRow last> 
 					<TextInput 
 						style={styles.input}
-						placeholder = "******"
+						placeholder = "*******"
 						secureTextEntry
 						value={this.state.password}
 						onChangeText = {value => this.onChangeHandler('password', value)}
