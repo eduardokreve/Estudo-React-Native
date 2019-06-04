@@ -1,0 +1,9 @@
+expo init 'nomedoprojeto'
+cd nomedoprojeto
+npm start
+
+Se der algum erro com número de conexões:
+
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+Colar o trecho a cima
