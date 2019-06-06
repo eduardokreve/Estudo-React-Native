@@ -1,33 +1,45 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, View, Text } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation'; // Version can be specified in package.json
 
-class Person extends React.Component {
-	constructor (props) {
-		super(props);
-		this.state = {name : ""};
-	}
-	render() {
-		return (
-			<View style={styles.container}>
-				<Text onPress={()=> this.setState(
-					{name : "Eduardo"}
-				)}>My name is {this.state.name}</Text>	
-			</View>
-		);
-  	}
+class HomeScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Home Screen</Text>
+        <Button
+          title="Go to Details"
+          onPress={() => this.props.navigation.navigate('Details')}
+        />
+      </View>
+    );
+  }
 }
+
+class DetailsScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Details Screen</Text>
+      </View>
+    );
+  }
+}
+
+const RootStack = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Details: DetailsScreen,
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+
+const AppContainer = createAppContainer(RootStack);
 
 export default class App extends React.Component {
   render() {
-		return (
-			<Person/>
-		);
+    return <AppContainer />;
   }
 }
-const styles = StyleSheet.create({
-	container: {
-	 flex: 1,
-	 justifyContent: 'center',
-	 alignItems: 'center'
-	}
-  });
