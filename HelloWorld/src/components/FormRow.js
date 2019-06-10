@@ -20,20 +20,20 @@ const FormRow = props => {
 const styles = StyleSheet.create ({
 	container: {
 		padding:12,
-		color:'#5c5c5c',
-		backgroundColor:'#FFFFFF',
+		backgroundColor:'#f1f1f1',
 		borderRadius: 5,
 		margin:8,
 		elevation:1,
-		textAlign: 'center',
+		width: '100%',
+		shadowOpacity: 0.2,
+		shadowRadius: 1,
+		elevation: 1,
 	},
 	first: {
 		marginTop:10,
-		fontFamily: 'monospace',
 	},
 	last:{
 		marginBottom:10,
-		fontFamily: 'monospace',
 	}
 });
 

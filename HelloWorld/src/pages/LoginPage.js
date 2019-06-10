@@ -1,5 +1,8 @@
 import React from 'react';
-import {View, StyleSheet, TextInput, Text, Button, Alert, ActivityIndicator} from 'react-native';
+import {View, StyleSheet, 
+	TextInput, Text, 
+	Alert, ActivityIndicator, 
+	TouchableOpacity} from 'react-native';
 import firebase from 'firebase';
 
 import FormRow from '../components/FormRow' //importa o formulario para a pagina do login
@@ -58,21 +61,12 @@ export default class LoginPage extends React.Component {
 				if (error.code === 'auth/user-not-found') {
 					Alert.alert(
 						'Usuário não encontrado', 
-						'Deseja criar um cadastro?',
+						'Entre em contato com a secretária acadêmica',
 						[{
 							text: 'voltar',
-							onPress: () => console.log('Usuário não quer se cadastrar')
+							onPress: () => console.log('voltar')
 						},
-						{
-							text: 'Concerteza',
-							onPress: () => {
-								firebase
-									.auth()
-									.createUserWithEmailAndPassword(email, password)
-									.then(loginUserSuccess)
-									.catch(LoginUserFailed)
-							}
-						}],
+						],
 						{cancelable: false}
 					)
 					return;
@@ -86,7 +80,7 @@ export default class LoginPage extends React.Component {
 	getMessageByErrorCode(errorCode) {
 		switch (errorCode) {
 			case 'auth/wrong-password':
-				return 'Senha incorreta';
+				Alert.alert ('Senha incorreta');
 			case 'auth/user-not-found':
 				return 'Usuário não encontrado';
 			default:
@@ -101,10 +95,11 @@ export default class LoginPage extends React.Component {
 
 		return (
 			<View style={styles.button}>
-				<Button 
-					title="ENTRAR"
-					onPress={() => this.tryLogin()} 
-				/>
+				<TouchableOpacity style={styles.textButton}
+					onPress={() => this.tryLogin()}
+				>
+				<Text style={{color:'white', fontSize:24}}>ENTRAR</Text>
+				</TouchableOpacity>
 			</View>	
 		);
 	}
@@ -130,7 +125,8 @@ export default class LoginPage extends React.Component {
 				<FormRow first> 
 					<TextInput
 						style={styles.input} 
-						placeholder = "IdUFFS ou CPF" //mostra o campo
+						placeholder = "IdUFFS" 
+						placeholderTextColor = "#adadad"
 						value={this.state.email} //define o valor quando o usuario digitar
 						onChangeText = {value => this.onChangeHandler('email', value)}
 					/>
@@ -139,6 +135,7 @@ export default class LoginPage extends React.Component {
 					<TextInput 
 						style={styles.input}
 						placeholder = "Senha"
+						placeholderTextColor = "#adadad"	
 						secureTextEntry
 						value={this.state.password}
 						onChangeText = {value => this.onChangeHandler('password', value)}
@@ -159,23 +156,32 @@ const styles = StyleSheet.create({
 		color:'#5c5c5c',
 		textAlign:'center',
 		fontSize:16,
-		fontFamily:'monospace',
-		paddingBottom:10,
+		paddingBottom:'4%',
 	},
 	container: {
-		marginTop:10,
-		backgroundColor:'#ffffff',
-		paddingLeft:10,
-		paddingRight:10,
-		paddingTop:20,
+		paddingLeft:'2%',
+		paddingRight:'2%',
+		paddingTop:'20%',
+		justifyContent: 'center',
+		alignItems: 'center',
+		width: '100%',
 	},
 	input: {
 		paddingLeft:5,
 		paddingRight: 5,
-		paddingBottom: 5,
+		paddingBottom: 7,
+		fontSize:19,
 	},
-	button: {
-		marginTop:35,
+	textButton:{
+		width: '100%',
+		paddingLeft:'19%',
+		paddingRight:'19%',
+		paddingBottom:'3%',
+		paddingTop:'3%',
+		marginTop:'8%',
+		backgroundColor: '#519387',
+		borderRadius: 3,
+		elevation: 2,
 	}
 });
 
