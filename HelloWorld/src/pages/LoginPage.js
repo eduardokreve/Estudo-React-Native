@@ -60,7 +60,7 @@ export default class LoginPage extends React.Component {
 						'Usuário não encontrado', 
 						'Deseja criar um cadastro?',
 						[{
-							text: 'Não',
+							text: 'voltar',
 							onPress: () => console.log('Usuário não quer se cadastrar')
 						},
 						{
@@ -86,7 +86,7 @@ export default class LoginPage extends React.Component {
 	getMessageByErrorCode(errorCode) {
 		switch (errorCode) {
 			case 'auth/wrong-password':
-				return 'Senha não encontrada';
+				return 'Senha incorreta';
 			case 'auth/user-not-found':
 				return 'Usuário não encontrado';
 			default:
@@ -102,7 +102,7 @@ export default class LoginPage extends React.Component {
 		return (
 			<View style={styles.button}>
 				<Button 
-					title="Login"
+					title="ENTRAR"
 					onPress={() => this.tryLogin()} 
 				/>
 			</View>	
@@ -126,10 +126,11 @@ export default class LoginPage extends React.Component {
 	render() { //o que vai ser renderizado
 		return (
 			<View style={styles.container}>
+				<Text style ={styles.text}>Entre com seu IdUFFS</Text>
 				<FormRow first> 
 					<TextInput
 						style={styles.input} 
-						placeholder = "user@mail.com" //mostra o campo
+						placeholder = "IdUFFS ou CPF" //mostra o campo
 						value={this.state.email} //define o valor quando o usuario digitar
 						onChangeText = {value => this.onChangeHandler('email', value)}
 					/>
@@ -137,7 +138,7 @@ export default class LoginPage extends React.Component {
 				<FormRow last> 
 					<TextInput 
 						style={styles.input}
-						placeholder = "*******"
+						placeholder = "Senha"
 						secureTextEntry
 						value={this.state.password}
 						onChangeText = {value => this.onChangeHandler('password', value)}
@@ -154,9 +155,19 @@ export default class LoginPage extends React.Component {
 
 //estilo 
 const styles = StyleSheet.create({
+	text:{
+		color:'#5c5c5c',
+		textAlign:'center',
+		fontSize:16,
+		fontFamily:'monospace',
+		paddingBottom:10,
+	},
 	container: {
+		marginTop:10,
+		backgroundColor:'#ffffff',
 		paddingLeft:10,
 		paddingRight:10,
+		paddingTop:20,
 	},
 	input: {
 		paddingLeft:5,
@@ -164,7 +175,7 @@ const styles = StyleSheet.create({
 		paddingBottom: 5,
 	},
 	button: {
-		marginTop:5,
+		marginTop:35,
 	}
 });
 

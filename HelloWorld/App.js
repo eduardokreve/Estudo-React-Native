@@ -1,33 +1,20 @@
-import {createAppContainer, createStackNavigator} from 'react-navigation';
-
-import LoginScreen from './src/pages/LoginPage' //importa a tela de login
+import React, {Component} from 'react';
+import { View, StyleSheet, Image, AppRegistry} from 'react-native';
 import { useScreens } from 'react-native-screens';
-useScreens();
+import LoginPage from './src/pages/LoginPage';
 
-const AppNavigator = createStackNavigator({
-	'Login': {
-		screen: LoginScreen,
-		navigationOptions: {
-			title: 'Bem vindo',
-		}
-	},
-}, 
-{
-	defaultNavigationOptions: {
-		title:"Series!",
-		headerTintColor:'white',
-		headerStyle: {
-			backgroundColor: '#6ca2f7',
-			borderBottomWidth: 1,
-			borderBottomColor:'#c5c5c5',
-		},
-		headerTitleStyle: {
-			color: 'white',
-			fontSize:30,
-		}
+useScreens(); //otimização do react-navigation
+
+export default class App extends Component {
+	render() {
+		return(
+			<View>
+				<Image
+					style={{width: 368, height: 137}}
+					source={require('./download.png')}
+				/>
+				<LoginPage/>
+			</View>
+		)
 	}
-});
-
-const AppContainer = createAppContainer(AppNavigator);
-
-export default AppContainer;
+}
