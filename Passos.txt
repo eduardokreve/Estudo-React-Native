@@ -1,6 +1,6 @@
 expo init 'nomedoprojeto'
 cd nomedoprojeto
-npm start
+yarn start
 
 Se der algum erro com número de conexões:
 

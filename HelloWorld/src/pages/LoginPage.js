@@ -81,8 +81,10 @@ export default class LoginPage extends React.Component {
 		switch (errorCode) {
 			case 'auth/wrong-password':
 				Alert.alert ('Senha incorreta');
+        break;
 			case 'auth/user-not-found':
-				return 'Usuário não encontrado';
+				Alert.alert('Usuário não encontrado');
+        break;
 			default:
 				return 'Erro desconhecido';
 		}
@@ -96,8 +98,7 @@ export default class LoginPage extends React.Component {
 		return (
 			<View style={styles.button}>
 				<TouchableOpacity style={styles.textButton}
-					onPress={() => this.tryLogin()}
-				>
+					onPress={() => this.tryLogin()}>
 				<Text style={{color:'white', fontSize:24}}>ENTRAR</Text>
 				</TouchableOpacity>
 			</View>	
