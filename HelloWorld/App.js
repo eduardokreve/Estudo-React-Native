@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import {View, StyleSheet, 
 	TextInput, Text, 
+	Alert, ActivityIndicator, 
 	TouchableOpacity} from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation'; 
-import { useScreens } from 'react-native-screens';
-useScreens();
+import { createStackNavigator, createAppContainer, createDrawerNavigator } from 'react-navigation'; 
 
 import FormRow from './src/components/FormRow'
 
+//https://shift.infinite.red/react-navigation-drawer-tutorial-a802fc3ee6dc
 class Menu extends React.Component {
-	
-	
-	render() {
+  render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Details Screen</Text>
       </View>
     );
   }
-}	
+}
+
+
 
 class LoginForm extends React.Component {
 	constructor(props) {
@@ -32,6 +32,7 @@ class LoginForm extends React.Component {
 		}
 	}
 
+	
 	//função que seta os valores para email e password (novos valores)
 	onChangeHandler(field, value) {
 		this.setState ({
@@ -40,6 +41,10 @@ class LoginForm extends React.Component {
 	}
 
 	renderButton() {
+		//mostra que está carregando
+		if (this.state.isLoading)
+			return <ActivityIndicator/>;
+
 		return (
 			<View style={styles.button}>
 				<TouchableOpacity style={styles.textButton}
@@ -81,25 +86,6 @@ class LoginForm extends React.Component {
 	}    
 }
 
-
-
-const RootStack = createStackNavigator({
-  'Login':{
-    screen:LoginForm
-  },
-  'Main':{
-    screen:Menu
-  }
-});
-
-const AppContainer = createAppContainer(RootStack);
-export default class App extends React.Component {
-  render() {
-    return <AppContainer />;
-    
-  }
-}
-
 //estilo 
 const styles = StyleSheet.create({
 	text:{
@@ -111,7 +97,7 @@ const styles = StyleSheet.create({
 	container: {
 		paddingLeft:'3%',
 		paddingRight:'3%',
-		paddingTop:'30%',
+		paddingTop:'20%',
 		justifyContent: 'center',
 		alignItems: 'center',
 		width: '100%',
@@ -134,3 +120,42 @@ const styles = StyleSheet.create({
 		elevation: 2,
 	}
 });
+
+
+const RootStack = createStackNavigator({
+  {
+		'Login':{
+			screen:LoginForm,
+		}
+	},
+  {
+		initialRouteName: 'Login',
+		headerMode: 'screen',
+  }
+});
+https://stackoverflow.com/questions/50290050/how-to-implement-both-drawernavigator-and-stacknavigator
+const menuNavigation = createDrawerNavigator({
+	{
+		'MenuLateral':{
+			screen:Menu
+		}
+	},
+	{
+    drawerOpenRoute: 'DrawerOpen',
+    drawerCloseRoute: 'DrawerClose',
+    drawerToggleRoute: 'DrawerToggle',
+    contentComponent: SlideMenu,
+    navigationOptions: {
+      drawerLockMode: 'locked-closed',
+    },
+})
+
+
+const AppContainer = createAppContainer(menuNavigation);
+
+export default class App extends React.Component {
+  render() {
+    return <AppContainer />;
+    
+  }
+}
