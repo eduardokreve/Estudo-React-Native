@@ -1,27 +1,13 @@
-import React, {Component} from 'react';
-import { View, Image, StyleSheet} from 'react-native';
-import LoginPage from './src/pages/LoginPage';
+import React, { Component } from 'react';
 
+import Login from './src/pages/Login'; //página de login
+
+mudar para a navegação do react navigation
+1 - tela é a de login e logo apoós a  do menu.js
 export default class App extends Component {
-	render() {
-		return(
-			<View style = {styles.container}>
-				<Image style = {styles.image}
-					source={require('./download.png')}
-				/>
-				<LoginPage/>
-			</View>
-		)
-	}
+  render() {
+    return <Login/>;
+  }
 }
 
-const styles = StyleSheet.create ({
-	container: {
-		justifyContent: 'center',
-	},
-	image: {
-		justifyContent: 'center', 
-		alignItems: 'center',
-		backgroundColor: 'transparent',
-	}
-});
+

@@ -6,7 +6,7 @@ import {View, StyleSheet,
 import firebase from 'firebase';
 
 import FormRow from '../components/FormRow' //importa o formulario para a pagina do login
-
+import Menu from './Menu' //importa o menu principal
 export default class LoginPage extends React.Component {
 	constructor(props) {
 		super(props);
@@ -43,7 +43,7 @@ export default class LoginPage extends React.Component {
 		const {email, password} = this.state;
 
 		const loginUserSuccess = user => {
-			this.setState({message: "Sucesso!"});
+			this.setState({message: "Sucesso!"}).navigation.navigate;
 		}
 
 		const LoginUserFailed = error => {
@@ -60,11 +60,10 @@ export default class LoginPage extends React.Component {
 			.catch(error => {
 				if (error.code === 'auth/user-not-found') {
 					Alert.alert(
-						'Usuário não encontrado', 
+						'IdUFFS não encontrado', 
 						'Entre em contato com a secretária acadêmica',
 						[{
-							text: 'voltar',
-							onPress: () => console.log('voltar')
+							text: 'voltar'
 						},
 						],
 						{cancelable: false}
@@ -160,8 +159,8 @@ const styles = StyleSheet.create({
 		paddingBottom:'4%',
 	},
 	container: {
-		paddingLeft:'2%',
-		paddingRight:'2%',
+		paddingLeft:'3%',
+		paddingRight:'3%',
 		paddingTop:'20%',
 		justifyContent: 'center',
 		alignItems: 'center',
@@ -178,7 +177,7 @@ const styles = StyleSheet.create({
 		paddingLeft:'19%',
 		paddingRight:'19%',
 		paddingBottom:'3%',
-		paddingTop:'3%',
+		paddingTop:'4%',
 		marginTop:'8%',
 		backgroundColor: '#519387',
 		borderRadius: 3,
