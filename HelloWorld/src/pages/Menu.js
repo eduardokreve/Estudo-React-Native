@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 
 export default class Menu extends React.Component {
     render() {
@@ -9,3 +9,4 @@ export default class Menu extends React.Component {
       );
     }
   }
+  */

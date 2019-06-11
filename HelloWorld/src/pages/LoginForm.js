@@ -6,8 +6,9 @@ import {View, StyleSheet,
 import firebase from 'firebase';
 
 import FormRow from '../components/FormRow' //importa o formulario para a pagina do login
-import Menu from './Menu' //importa o menu principal
-export default class LoginPage extends React.Component {
+
+
+class LoginForm extends React.Component {
 	constructor(props) {
 		super(props);
 		//define um valor inicial (vazio)
@@ -43,7 +44,7 @@ export default class LoginPage extends React.Component {
 		const {email, password} = this.state;
 
 		const loginUserSuccess = user => {
-			this.setState({message: "Sucesso!"}).navigation.navigate;
+			this.setState({message: "Sucesso!"});
 		}
 
 		const LoginUserFailed = error => {
@@ -185,3 +186,4 @@ const styles = StyleSheet.create({
 	}
 });
 
+export default LoginForm;

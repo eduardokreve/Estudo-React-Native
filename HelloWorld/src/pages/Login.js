@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
+/*import React, {Component} from 'react';
 import { View, Image, StyleSheet} from 'react-native';
-import LoginPage from './LoginPage';
+import LoginForm from './LoginForm';
 
 class Login extends Component {
 	render() {
 		return(
 			<View style = {styles.container}>
 				<Image style = {styles.image}
-					source={require('../../download.png')}
+					source={require('../../login-logo.png')}
 				/>
-				<LoginPage/>
+				<LoginForm/>
 			</View>
 		)
 	}
@@ -23,7 +23,9 @@ const styles = StyleSheet.create ({
 		justifyContent: 'center', 
 		alignItems: 'center',
 		backgroundColor: 'transparent',
+		width: '100%',
 	}
 });
 
 export default Login;
+*/
