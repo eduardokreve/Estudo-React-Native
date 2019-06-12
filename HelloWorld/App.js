@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
-import {View, StyleSheet, 
-	TextInput, Text, 
-	Alert, ActivityIndicator, 
+import {View, 
+	StyleSheet, 
+	TextInput, 
+	Text, 
+	ActivityIndicator, 
 	TouchableOpacity} from 'react-native';
 import { createStackNavigator, createAppContainer, createDrawerNavigator } from 'react-navigation'; 
-
+import { useScreens } from 'react-native-screens';
 import FormRow from './src/components/FormRow'
 
-//https://shift.infinite.red/react-navigation-drawer-tutorial-a802fc3ee6dc
+useScreens(); //otimização
+
 class Menu extends React.Component {
+	static navigationOptions = {
+		title: "Menu"
+	}
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -18,9 +24,8 @@ class Menu extends React.Component {
   }
 }
 
-
-
 class LoginForm extends React.Component {
+	
 	constructor(props) {
 		super(props);
 		//define um valor inicial (vazio)
@@ -48,7 +53,7 @@ class LoginForm extends React.Component {
 		return (
 			<View style={styles.button}>
 				<TouchableOpacity style={styles.textButton}
-					onPress={() => this.props.navigation.navigate('Main')}>
+					onPress={() => this.props.navigation.navigate('MenuNavigation')}>
 				<Text style={{color:'white', fontSize:24}}>ENTRAR</Text>
 				</TouchableOpacity>
 			</View>	
@@ -97,7 +102,7 @@ const styles = StyleSheet.create({
 	container: {
 		paddingLeft:'3%',
 		paddingRight:'3%',
-		paddingTop:'20%',
+		paddingTop:'50%',
 		justifyContent: 'center',
 		alignItems: 'center',
 		width: '100%',
@@ -121,37 +126,31 @@ const styles = StyleSheet.create({
 	}
 });
 
-
-const RootStack = createStackNavigator({
-  {
-		'Login':{
-			screen:LoginForm,
-		}
-	},
-  {
-		initialRouteName: 'Login',
-		headerMode: 'screen',
-  }
-});
-https://stackoverflow.com/questions/50290050/how-to-implement-both-drawernavigator-and-stacknavigator
-const menuNavigation = createDrawerNavigator({
-	{
-		'MenuLateral':{
-			screen:Menu
-		}
-	},
-	{
-    drawerOpenRoute: 'DrawerOpen',
-    drawerCloseRoute: 'DrawerClose',
-    drawerToggleRoute: 'DrawerToggle',
-    contentComponent: SlideMenu,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed',
-    },
+const menuNav = createDrawerNavigator({
+	'StackNavigator': {
+		screen: Menu,
+	}
 })
 
+const NavegacaoPrincipal = createStackNavigator({
+		'LoginNavigation':{
+			screen:LoginForm,
+			navigationOptions:{
+				header: null, 
+			}
+		},
+		'MenuNavigation':{
+			screen: menuNav,
+			navigationOptions:{
+				header: null,
+			//	gesturesEnabled: false
+			}
+		},
+  
+		initialRouteName: 'LoginNavigation'
+});
 
-const AppContainer = createAppContainer(menuNavigation);
+const AppContainer = createAppContainer(NavegacaoPrincipal);
 
 export default class App extends React.Component {
   render() {
