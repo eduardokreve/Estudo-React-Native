@@ -5,8 +5,9 @@ import {View,
 	Text, 
 	ActivityIndicator, 
 	TouchableOpacity} from 'react-native';
-import { createStackNavigator, createAppContainer, createDrawerNavigator } from 'react-navigation'; 
+import { createStackNavigator, createAppContainer } from 'react-navigation'; 
 import { useScreens } from 'react-native-screens';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 import FormRow from './src/components/FormRow'
 
 useScreens(); //otimização
