@@ -20,14 +20,14 @@ const FormRow = props => {
 const styles = StyleSheet.create ({
 	container: {
 		padding:12,
-		backgroundColor:'#f1f1f1',
+		backgroundColor:'#ffffff',
 		borderRadius: 5,
-		margin:8,
+		margin:9,
 		elevation:1,
 		width: '100%',
 		shadowOpacity: 0.2,
 		shadowRadius: 1,
-		elevation: 1,
+		elevation: 2,
 	},
 	first: {
 		marginTop:10,

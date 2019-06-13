@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
 	},
 	MensagemMenu: {
 		fontSize: 40,
-		color:'#ADADAD',
+		color:'#adadad',
 		justifyContent:'center',
 		paddingTop:'30%',
 		paddingLeft:'12%',
