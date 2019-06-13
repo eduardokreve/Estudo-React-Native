@@ -15,15 +15,14 @@ const Header = ({titulo}) => {
 
 const styles = StyleSheet.create({
     header: {
-        fontSize:50,
+        fontSize:30,
         textAlign:'center',
-        fontWeight: 'bold',
-        color: 'red',
-        marginBottom: 10,
-        marginRight: 10,
-        paddingLeft: 10,
-        paddingRight: 10,
-        paddingVertical: 10,
+        justifyContent: 'center',
+        fontWeight:'bold',
+        color: '#FFFFFF',
+        backgroundColor:'#519387',
+        width:'100%',
+        height:'30%',
     },
 });
 

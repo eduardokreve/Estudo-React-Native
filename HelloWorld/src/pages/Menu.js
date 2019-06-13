@@ -8,11 +8,10 @@ export default class Menu extends React.Component {
 	}
   	render() {
 		return (
-	    	<View style = {styles.Menu}>
-					<Header style = {styles.Header}titulo={"UFFS"} />
-			  	<Text style = {styles.TituloMenu}>Seja bem vindo</Text>
-		    </View>
-       
+			<View style = {styles.Menu}>
+				<Header titulo={"UFFS"} />
+				<Text style = {styles.MensagemMenu}>Seja bem vindo</Text>
+			</View>   
 		);
  	}
 }
@@ -22,18 +21,16 @@ export default class Menu extends React.Component {
 	/>
 */
 const styles = StyleSheet.create({
-	Header: {
-		backgroundColor:'red',
-	},
 	Menu: {
-		backgroundColor: '#EBEBEB',
-	//	width: '100%',
+		backgroundColor: '#f7f7f7',
+		width:'100%',
+        height:'100%',
 	},
-	TituloMenu: {
-		fontSize: 28,
-		fontWeight:'bold',
+	MensagemMenu: {
+		fontSize: 40,
 		color:'#ADADAD',
-		alignItems: 'center', 
 		justifyContent:'center',
+		paddingTop:'30%',
+		paddingLeft:'12%',
 	}
 })
