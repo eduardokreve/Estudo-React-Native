@@ -9,11 +9,17 @@ import Menu from './src/pages/Menu'
 
 useScreens(); //otimização do react-navigation
 
-const menuNav = createDrawerNavigator({
-	'StackNavigator': {
-		screen: Menu,
+const MenuNav = createDrawerNavigator(
+	{
+		Menu,
+		test,
+	},
+	{
+		drawerType: 'slide',
+		drawerPosition: 'left',
+		headerMode: ' float ',
 	}
-})
+)
 
 const NavegacaoPrincipal = createStackNavigator({
 		'LoginNavigation':{
@@ -23,10 +29,10 @@ const NavegacaoPrincipal = createStackNavigator({
 			}
 		},
 		'MenuNavigation':{
-			screen: menuNav,
+			screen: MenuNav,
 			navigationOptions:{
 				header: null,
-			}
+			},
 		},
   
 		initialRouteName: 'LoginNavigation'
