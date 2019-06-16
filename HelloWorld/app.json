@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Novo app",
-    "slug": "HelloWorld",
+    "name": "Aplicativo UFFS",
+    "slug": "app_uffs",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
@@ -24,6 +24,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/eduardokreve/Estudo-React-Native/tree/master/HelloWorld"
   }
 }

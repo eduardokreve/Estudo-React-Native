@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button, StyleSheet,} from 'react-native'; 
+import {View, Text, StyleSheet, Image} from 'react-native'; 
 
 import Header from '../components/Header'
 export default class Menu extends React.Component {
@@ -11,15 +11,13 @@ export default class Menu extends React.Component {
 			<View style = {styles.Menu}>
 				<Header titulo={"UFFS"} />
 				<Text style = {styles.MensagemMenu}>Seja bem vindo</Text>
+				<Text style = {styles.Deslizar}>Deslize para começar</Text>
+				<Image style = {styles.Imagem} source={require('../../assets/seta_direita.png')}/>
 			</View>   
 		);
  	}
 }
 
- /* <Button style = {{alignItems: 'center', justifyContent:'center'}} 
-		onPress={() => this.props.navigation.navigate('LoginNavigation')} title ="Voltar"	
-	/>
-*/
 const styles = StyleSheet.create({
 	Menu: {
 		backgroundColor: '#f7f7f7',
@@ -28,9 +26,25 @@ const styles = StyleSheet.create({
 	},
 	MensagemMenu: {
 		fontSize: 40,
-		color:'#adadad',
+		color:'#7a7a7a',
 		justifyContent:'center',
-		paddingTop:'30%',
+		paddingTop:'23%',
 		paddingLeft:'12%',
+	},
+	Deslizar:{
+		fontSize: 16,
+		fontWeight:'bold',
+		color:'#7a7a7a',
+		justifyContent: 'center',
+		alignItems: 'center',
+		paddingTop:'10%',
+		paddingLeft:'28%',
+	},
+	Imagem:{	
+		width:90,
+		height:90,
+		alignItems: 'center',
+		justifyContent: 'center',
+		left:'35%'
 	}
 })
