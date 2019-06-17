@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
         backgroundColor:'#519387',
         width:'100%',
-        height:'30%',
+       // height:'30%',
     },
 });
 

@@ -1,8 +1,7 @@
 import React from 'react';
-import {View, Text, StyleSheet,} from 'react-native'; 
-import { createStackNavigator, 
-	createMaterialTopTabNavigator,
-	createAppContainer 
+import {View, StyleSheet, Dimensions} from 'react-native'; 
+import { createMaterialTopTabNavigator,
+	createAppContainer,
 } from 'react-navigation'; 
 
 import Header from '../components/Header'
@@ -12,37 +11,44 @@ import SecondPage from '../components/SecondPage'
 
 const TabScreen = createMaterialTopTabNavigator(
 	{
-	  Home: { screen: FirstPage },
-	  Settings: { screen: SecondPage },
+	  Janeiro: { screen: FirstPage },
+		Fevereiro: { screen: SecondPage },
+		Março: { screen: FirstPage },
+		Abril: { screen: SecondPage },
+		Maio: { screen: FirstPage },
+		Junho: { screen: SecondPage },
+		Julho: { screen: FirstPage },
+		Agosto: { screen: SecondPage },
+		Setembro: { screen: FirstPage },
+		Outubro: { screen: SecondPage },
+		Novembro: { screen: FirstPage },
+	 	Dezembro: { screen: SecondPage }
 	},
 	{
-	  tabBarPosition: 'top',
-	  swipeEnabled: true,
-	  animationEnabled: true,
-	  tabBarOptions: {
-		activeTintColor: '#FFFFFF',
-		inactiveTintColor: '#F8F8F8',
-		style: {
-		  backgroundColor: '#633689',
+		tabBarOptions: {
+			scrollEnabled: true,
+			labelStyle: {
+				fontSize: 13,
+				color:'black'
+			},
+			tabStyle: {
+				width: Dimensions.get('window').width / 3,
+			},
+			style: {
+				backgroundColor: 'white',
+			},
+			indicatorStyle: {
+				backgroundColor: '#519387'
+			}
 		},
-		labelStyle: {
-		  textAlign: 'center',
-		},
-		indicatorStyle: {
-		  borderBottomColor: '#87B56A',
-		  borderBottomWidth: 2,
-		},
-	  },
 	}
-  );
+);
 
-const App = createStackNavigator({
-	TabScreen: {
-	  screen: TabScreen,
-	},
-  });
+TabScreen.navigationOptions = {
+	header:null
+}
 
-const Meses = createAppContainer(App);
+const Meses = createAppContainer(TabScreen);
 
 export default class Calendario extends React.Component {
 	static navigationOptions = {
@@ -63,10 +69,6 @@ const styles = StyleSheet.create({
 	Menu: {
 		backgroundColor: '#f7f7f7',
 		width:'100%',
-        height:'100%',
-	},
-	Meses :{
-		marginTop:'0%',
-		
+    height:'100%',
 	}
 })

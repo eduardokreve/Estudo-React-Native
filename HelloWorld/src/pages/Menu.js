@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 		fontSize: 40,
 		color:'#7a7a7a',
 		justifyContent:'center',
-		paddingTop:'23%',
+		paddingTop:'45%',
 		paddingLeft:'12%',
 	},
 	Deslizar:{
