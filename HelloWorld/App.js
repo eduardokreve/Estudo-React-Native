@@ -14,6 +14,7 @@ import Uteis from './src/pages/Uteis'
 import Eventos from './src/pages/Eventos'
 import Aula from './src/pages/Aula'
 import Onibus from './src/pages/Onibus'
+
 useScreens(); //otimização do react-navigation
 
 const MenuNav = createDrawerNavigator(

@@ -11,7 +11,7 @@ export default class Menu extends React.Component {
 			<View style = {styles.Menu}>
 				<Header titulo={"UFFS"} />
 				<Text style = {styles.MensagemMenu}>Seja bem vindo</Text>
-				<Text style = {styles.Deslizar}>Deslize para começar</Text>
+				<Text style = {styles.Deslizar}>Deslize para a direita</Text>
 				<TouchableOpacity onPress={() => { this.props.navigation.openDrawer() }}>
 					<Image style = {styles.Imagem} 
 						source={require('../../assets/seta_direita.png')}
