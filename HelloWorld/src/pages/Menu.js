@@ -12,7 +12,11 @@ export default class Menu extends React.Component {
 				<Header titulo={"UFFS"} />
 				<Text style = {styles.MensagemMenu}>Seja bem vindo</Text>
 				<Text style = {styles.Deslizar}>Deslize para começar</Text>
-				<Image style = {styles.Imagem} source={require('../../assets/seta_direita.png')}/>
+				<TouchableOpacity onPress={() => { this.props.navigation.openDrawer() }}>
+					<Image style = {styles.Imagem} 
+						source={require('../../assets/seta_direita.png')}
+					/>
+				</TouchableOpacity>
 			</View>   
 		);
  	}
