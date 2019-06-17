@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
 		width:'100%',
         height:'100%',
 	},
-	MensagemMenu: {
+	MensagemMenu: {//teste tab navigator
 		fontSize: 40,
 		color:'#7a7a7a',
 		justifyContent:'center',
