@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native'; 
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'; 
 
 import Header from '../components/Header'
 export default class Menu extends React.Component {

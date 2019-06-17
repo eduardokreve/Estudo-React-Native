@@ -1,5 +1,7 @@
 import React from 'react';
-import { createStackNavigator, createAppContainer } from 'react-navigation'; 
+import { createStackNavigator, 
+	createAppContainer,
+} from 'react-navigation'; 
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { useScreens } from 'react-native-screens';
 
