@@ -20,12 +20,11 @@ const styles = StyleSheet.create({
         textAlign:'center',
         justifyContent: 'center',
         fontWeight:'bold',
-        color: '#FFFFFF',
+        color: '#ffffff',
         backgroundColor:'#519387',
         width:'100%',
-       // height:'30%',
+        elevation: 5
     },
 });
-
 
 export default Header; 
