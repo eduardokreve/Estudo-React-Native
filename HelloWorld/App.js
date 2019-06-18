@@ -1,7 +1,9 @@
 import React from 'react';
-import { createStackNavigator, 
+import { 
+	createStackNavigator, 
 	createAppContainer,
 } from 'react-navigation'; 
+import {Dimensions} from 'react-native';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { useScreens } from 'react-native-screens';
 
@@ -19,21 +21,26 @@ useScreens(); //otimização do react-navigation
 
 const MenuNav = createDrawerNavigator(
 	{
-		Menu,
-		Calendario,
-		Cardapio,
-		Uteis,
-		Eventos,
-		Aula,
-		Onibus
+		Menu: {screen: Menu},
+		Calendario: {screen: Calendario},
+		Cardapio: {screen: Cardapio},
+		Uteis: {screen: Uteis},
+		Eventos: {screen: Eventos},
+		Aula: {screen: Aula},
+		Onibus: {screen: Onibus}
 	},
 	{
 		drawerType: 'slide',
 		drawerPosition: 'left',
 		headerMode: ' float ',
+		navigationOptions:{
+			header: null,
+		},
+		overlayColor:'black'
+
 	}
 )
-
+//https://reactnative.sataiva.com/reactnative-intro/reactnative-drawerNavigator/
 const NavegacaoPrincipal = createStackNavigator({
 		'LoginNavigation':{
 			screen:Login,
@@ -42,10 +49,7 @@ const NavegacaoPrincipal = createStackNavigator({
 			}
 		},
 		'MenuNavigation':{
-			screen: MenuNav,
-			navigationOptions:{
-				header: null,
-			},
+			screen: MenuNav
 		},
   
 		initialRouteName: 'LoginNavigation'
