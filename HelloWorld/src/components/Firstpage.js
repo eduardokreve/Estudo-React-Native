@@ -5,26 +5,17 @@ export default class FirstPage extends React.Component {
   state = {
     data: [
       {
-        id: '0', dia: '03 de Junho', texto: 'Publicação dos Editais para o Processo Seletivo de Transferência Interna e Retorno de Aluno-abandono da UFFS.',
+        id: '0', dia: '01 Jan', texto: 'Confraternização universal.',
       },
       {
-        id: '1', dia: '04 de Junho', texto: 'Período para inscrição para o Processo Seletivo de Transferência Interna e Retorno de Aluno-abandono daUFFS, Transferência Externa e Retorno de Graduado, para ingresso em 2019.2, na Secretaria Acadêmica',
+        id: '1', dia: '14 a 18 Jan', texto: 'Prazo para envio pelas Coordenações à Diretoria de Pós-Graduação da relação de matrículas para cancelamento (alunos que não poderão realizar rematrícula).',
       },
       {
-        id: '2', dia: '11 de Junho', texto: 'III Seminário Integrador de Extensão.' 
+        id: '2', dia: '23 a 31 Jan', texto: 'Rematrículas on-line PPGs.' 
       },
       {
-        id: '3', dia: '03 de Junho', texto: 'Publicação dos Editais para o Processo Seletivo de Transferência Interna e Retorno de Aluno-abandono da UFFS.',
+        id: '3', dia: '30 Jan', texto: 'Período para publicação de editais de Processo Seletivo aluno Regular 2019.2',
       },
-      {
-        id: '4', dia: '04 de Junho', texto: 'Período para inscrição para o Processo Seletivo de Transferência Interna e Retorno de Aluno-abandono daUFFS, Transferência Externa e Retorno de Graduado, para ingresso em 2019.2, na Secretaria Acadêmica',
-      },
-      {
-        id: '5', dia: '11 de Junho', texto: 'III Seminário Integrador de Extensão.' 
-      },
-      {
-        id: '6', dia: '04 de Junho', texto: 'Período para inscrição para o Processo Seletivo de Transferência Interna e Retorno de Aluno-abandono daUFFS, Transferência Externa e Retorno de Graduado, para ingresso em 2019.2, na Secretaria Acadêmica',
-      }
     ],
   };
 
