@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, FlatList } from 'react-native';
+import { Text, View, StyleSheet, FlatList , TouchableWithoutFeedback} from 'react-native';
  
 export default class FirstPage extends React.Component {
   state = {
@@ -21,27 +21,32 @@ export default class FirstPage extends React.Component {
       },
       {
         id: '5', dia: '11 de Junho', texto: 'III Seminário Integrador de Extensão.' 
+      },
+      {
+        id: '6', dia: '04 de Junho', texto: 'Período para inscrição para o Processo Seletivo de Transferência Interna e Retorno de Aluno-abandono daUFFS, Transferência Externa e Retorno de Graduado, para ingresso em 2019.2, na Secretaria Acadêmica',
       }
     ],
   };
 
   renderItem = ({ item }) => (
-    <View style={styles.listItem}>
-      <Text>{item.dia}</Text>
-      <Text>{item.texto}</Text>
-    </View>
+      <View style={styles.listItem}>
+        <Text style={styles.dia}> {item.dia} </Text>
+        <Text style={styles.texto}> {item.texto} </Text>
+      </View> 
   );
 
   render() {
     return (
-      <View style={styles.item}>
+      <View style={styles.container}>
         <FlatList 
-            style={{ marginTop: 30 }}
-            contentContainerStyle={styles.list}
+            contentContainerStyle={styles.flat}
             data={this.state.data}
             renderItem={this.renderItem}
             keyExtractor={(item) => item.id}
             ListFooterComponent={this.renderFooter}
+            
+            onEndReached={this.loadRepositories}
+            onEndReachedThreshold={0.1}
         />
       </View>
     );
@@ -49,16 +54,33 @@ export default class FirstPage extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  item: {
-    flex: 1, justifyContent: 'center', alignItems: 'center'
+  container: {
+    flex: 1, 
+    justifyContent: 'center',
+    alignItems: 'center',
   },  
-  list: {
+  flat: {
     paddingHorizontal: 20,
+    marginTop:20,
+    marginBottom:20,
   },
-
   listItem: {
-    backgroundColor: '#EEE',
-    marginTop: 20,
-    padding: 30,
+    backgroundColor: '#ebebeb',
+    marginTop: 5,
+    marginBottom: 10,
+    padding: 15,
+    borderRadius: 4,
+    elevation: 2
   },
+  dia:{
+    fontWeight:'bold',
+    fontSize:17,
+    textAlign:'center',
+  },
+  texto:{
+    marginTop:5,
+    color:'#474747',
+    fontSize:15,
+    textAlign:'justify'
+  }
 });
