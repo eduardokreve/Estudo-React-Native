@@ -17,7 +17,12 @@ import Eventos from './src/pages/Eventos'
 import Aula from './src/pages/Aula'
 import Onibus from './src/pages/Onibus'
 
+import EstiloMenuLateral from './src/components/EstiloMenuLateral'
+
+const { width, height } = Dimensions.get('screen'); //pega o tamanho da tela
+
 useScreens(); //otimização do react-navigation
+
 
 const MenuNav = createDrawerNavigator(
 	{
@@ -29,15 +34,15 @@ const MenuNav = createDrawerNavigator(
 		Aula: {screen: Aula},
 		Onibus: {screen: Onibus}
 	},
-	{
+	{	
+		contentComponent: EstiloMenuLateral,
+		drawerWidth: Math.min(height, width) * 0.85,
 		drawerType: 'slide',
 		drawerPosition: 'left',
 		headerMode: ' float ',
 		navigationOptions:{
 			header: null,
 		},
-		overlayColor:'black'
-
 	}
 )
 //https://reactnative.sataiva.com/reactnative-intro/reactnative-drawerNavigator/
