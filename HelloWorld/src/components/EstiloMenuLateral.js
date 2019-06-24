@@ -3,11 +3,12 @@ import  {Text,
     View, 
     StyleSheet, 
     TouchableOpacity,
-    Image
+    Image,
+    Dimensions
     } from 'react-native';
 import { NavigationActions } from "react-navigation";
 
-
+const { width, height } = Dimensions.get('window'); //pega o tamanho da tela
 export default class EstiloMenuLateral extends Component {
 
     navigateToScreen = route => () => {
@@ -92,8 +93,8 @@ export default class EstiloMenuLateral extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        width:'100%',
-        height:'100%'
+        width:width,
+        height:height
     },
     header: {
         elevation:1.5,
@@ -153,7 +154,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         color: '#7a7a7a',
         fontSize:20,
-        left:'30%',
+        left:'20%',
         bottom:'43%'
     },
 })

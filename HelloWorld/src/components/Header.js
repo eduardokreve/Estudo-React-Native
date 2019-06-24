@@ -2,8 +2,11 @@ import React from 'react';
 import {
     StyleSheet,
     Text, 
-    View
+    View,
+    Dimensions
 } from 'react-native';
+
+const { width, height } = Dimensions.get('window'); //pega o tamanho da tela
 
 const Header = ({titulo}) => {
     return (
@@ -22,7 +25,8 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         color: '#ffffff',
         backgroundColor:'#519387',
-        width:'100%',
+        width:width,
+        height:height/10.5,
         elevation: 5
     },
 });

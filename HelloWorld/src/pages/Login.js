@@ -5,9 +5,13 @@ import {View,
 	Text, 
 	ActivityIndicator, 
 	TouchableOpacity,
-	Image} from 'react-native';
+	Image,
+	Dimensions} from 'react-native';
 
 import FormRow from '../components/FormRow'
+
+const { width, height } = Dimensions.get('window'); //pega o tamanho da tela
+
 export default class Login extends React.Component {
 	constructor(props) {
 		super(props);
@@ -43,7 +47,7 @@ export default class Login extends React.Component {
 
 	render() { //o que vai ser renderizado
 		return (
-			<View style = {{backgroundColor: '#f7f7f7', width:'100%', height:'100%'}}>
+			<View style = {{backgroundColor: '#f7f7f7', width:width, height:height}}>
 				<View style = {styles.image}>
 					<Image source={require('../../assets/download.png')}/>	
 				</View>

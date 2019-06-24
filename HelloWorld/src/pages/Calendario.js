@@ -9,6 +9,8 @@ import Header from '../components/Header'
 import FirstPage from '../components/Firstpage'
 import SecondPage from '../components/SecondPage'
 
+const { width, height } = Dimensions.get('window'); //pega o tamanho da tela
+
 const TabScreen = createMaterialTopTabNavigator(
 	{
 	  Janeiro: { screen: FirstPage },
@@ -68,7 +70,7 @@ export default class Calendario extends React.Component {
 const styles = StyleSheet.create({
 	Menu: {
 		backgroundColor: '#f7f7f7',
-		width:'100%',
-    height:'100%',
+		width:width,
+    height:height,
 	}
 })

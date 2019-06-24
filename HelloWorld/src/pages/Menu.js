@@ -1,7 +1,9 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'; 
+import {View, Text, StyleSheet, Image, TouchableOpacity, Dimensions} from 'react-native'; 
 
 import Header from '../components/Header'
+
+const { width, height } = Dimensions.get('window'); //pega o tamanho da tela
 export default class Menu extends React.Component {
 	static navigationOptions = {
 		title: "Menu"
@@ -25,8 +27,8 @@ export default class Menu extends React.Component {
 const styles = StyleSheet.create({
 	Menu: {
 		backgroundColor: '#f7f7f7',
-		width:'100%',
-        height:'100%',
+		width:width,
+        height:height,
 	},
 	MensagemMenu: {//teste tab navigator
 		fontSize: 40,
