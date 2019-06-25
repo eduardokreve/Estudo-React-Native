@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
 		width:width,
         height:height,
 	},
-	MensagemMenu: {//teste tab navigator
+	MensagemMenu: {
 		fontSize: 40,
 		color:'#7a7a7a',
 		justifyContent:'center',
@@ -38,12 +38,11 @@ const styles = StyleSheet.create({
 		paddingLeft:'12%',
 	},
 	Deslizar:{
-		fontSize: 16,
-		fontWeight:'bold',
+		fontSize: 18,
 		color:'#7a7a7a',
 		justifyContent: 'center',
 		alignItems: 'center',
-		paddingTop:'10%',
+		paddingTop:'5%',
 		paddingLeft:'28%',
 	},
 	Imagem:{	

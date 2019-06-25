@@ -32,7 +32,7 @@ export default class EstiloMenuLateral extends Component {
                 </View>
               
                 <View style={styles.scrowView}>
-                    <View style={{flex: 1, flexDirection: 'column', marginTop:'5%', justifyContent: 'space-around'}}>
+                    <View style={{flex: 1, flexDirection: 'column', marginTop:'5%', justifyContent: 'space-evenly'}}>
                        
                         <TouchableOpacity style={styles.touch} onPress={this.navigateToScreen("Calendario")}>
                             <Image style={styles.image} source={require('../../assets/calendario_academico.png')}/> 
@@ -79,8 +79,8 @@ export default class EstiloMenuLateral extends Component {
                 </View>
 
                 <View style={styles.footerView}>
-                    <TouchableOpacity style={{padding:'5%'}} onPress={this.navigateToScreen("")}>
-                        <Image style={{justifyContent:'flex-start', alignItems:'center', bottom:'5%'}} source={require('../../assets/configuração.png')}/> 
+                    <TouchableOpacity style={{padding:'6%'}} onPress={this.navigateToScreen("")}>
+                        <Image style={{justifyContent:'flex-start', alignItems:'center', bottom:'10%'}} source={require('../../assets/configuração.png')}/> 
                             <Text style={styles.menConf}>
                                 Configurações
                             </Text> 
@@ -94,67 +94,68 @@ export default class EstiloMenuLateral extends Component {
 const styles = StyleSheet.create({
     container: {
         width:width,
-        height:height
+        height:height,
     },
     header: {
-        elevation:1.5,
-        backgroundColor:'#f7f7f7',
+        flex:1,
         width:'100%',
         height:'15%',
-        borderColor:'#EBEBEB',
-        borderWidth: 1,
-        flex:1,
+        backgroundColor:'#f7f7f7',
+        borderColor:'#7a7a7a',
+        borderWidth: 0.3,
     },
     perfil:{
-        left:'3%',
         bottom:'33%'
     },
     nomeUser: {
         fontSize:28,
-        color: '#7a7a7a',
-        left:'45%',
+        color: '#5c5c5c',
+        left:'30%',
         top:'88%',
         fontWeight:'bold',
     },
     scrowView: {
-        elevation:1,
         width:'100%',
         height:'75%',
-        borderWidth: 1,
-        borderColor:'#EBEBEB',
+        borderWidth: 0.3,
+        borderColor:'#7a7a7a',
         backgroundColor:'#f7f7f7',
     },
     touch:{
         alignContent:'flex-start',
         alignItems:'flex-start', 
-        padding:'2%'
+        paddingLeft:'5%',
     },  
     imagem:{
         flex: 1,
         resizeMode: 'contain', 
+        width:30,
+        height:30, 
+        alignItems: 'center',
+		justifyContent: 'center',
     },
     menus:{
         alignItems:'center',
         justifyContent:'center',
-        color: '#7a7a7a',
-        fontSize: 18,
-        left:'22%',
+        color: '#5c5c5c',
+        fontSize: 16,
+        left:'20%',
         bottom:'50%'
     },
     footerView: {
         width:'100%',
         height:'10%',
-        elevation:1.5,
         backgroundColor:'#f7f7f7',
-        borderWidth: 1,
-        borderColor:'#EBEBEB'
+        borderWidth: 0.3,
+        borderColor:'#7a7a7a'
     },
     menConf:{
         alignItems:'center',
         justifyContent:'center',
-        color: '#7a7a7a',
-        fontSize:20,
-        left:'20%',
-        bottom:'43%'
+        color: '#5c5c5c',
+        fontSize:18,
+        fontWeight:'bold',
+        left:'22.5%',
+        bottom:'45%'
     },
 })

@@ -54,7 +54,7 @@ const NavegacaoPrincipal = createStackNavigator({
 			}
 		},
 		'MenuNavigation':{
-			screen: MenuNav
+			screen: MenuNav,
 		},
   
 		initialRouteName: 'LoginNavigation'

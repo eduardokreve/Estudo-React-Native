@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		backgroundColor: 'transparent',
 		elevation: 2,
+		resizeMode: 'contain',
 	},
 	container: {
 		paddingLeft:'3%',
