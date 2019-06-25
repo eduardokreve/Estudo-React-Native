@@ -80,7 +80,8 @@ export default class EstiloMenuLateral extends Component {
 
                 <View style={styles.footerView}>
                     <TouchableOpacity style={{padding:'6%'}} onPress={this.navigateToScreen("")}>
-                        <Image style={{justifyContent:'flex-start', alignItems:'center', bottom:'10%'}} source={require('../../assets/configuração.png')}/> 
+                        <Image style={styles.imageConfig} 
+                            source={require('../../assets/configuração.png')}/> 
                             <Text style={styles.menConf}>
                                 Configurações
                             </Text> 
@@ -105,12 +106,18 @@ const styles = StyleSheet.create({
         borderWidth: 0.3,
     },
     perfil:{
-        bottom:'33%'
+        resizeMode: 'contain', 
+        width:64,
+        height:64, 
+        justifyContent:'center',
+        alignItems:'center', 
+        bottom:'20%',
+        left:'3%'
     },
     nomeUser: {
         fontSize:28,
         color: '#5c5c5c',
-        left:'30%',
+        left:'25%',
         top:'88%',
         fontWeight:'bold',
     },
@@ -126,11 +133,10 @@ const styles = StyleSheet.create({
         alignItems:'flex-start', 
         paddingLeft:'5%',
     },  
-    imagem:{
-        flex: 1,
+    image:{
         resizeMode: 'contain', 
-        width:30,
-        height:30, 
+        width:35,
+        height:35, 
         alignItems: 'center',
 		justifyContent: 'center',
     },
@@ -158,4 +164,12 @@ const styles = StyleSheet.create({
         left:'22.5%',
         bottom:'45%'
     },
+    imageConfig:{
+        resizeMode: 'contain', 
+        justifyContent:'flex-start', 
+        alignItems:'center', 
+        width:35,
+        height:35, 
+        bottom:'10%'
+    }
 })

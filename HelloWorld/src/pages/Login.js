@@ -49,7 +49,7 @@ export default class Login extends React.Component {
 		return (
 			<View style = {{backgroundColor: '#f7f7f7', width:width, height:height}}>
 				<View style = {styles.image}>
-					<Image source={require('../../assets/download.png')}/>	
+					<Image source={require('../../assets/login-logo.png')}/>	
 				</View>
 				<View style={styles.container}>
 					<Text style ={styles.text}>Entre com seu IdUFFS</Text>
@@ -83,12 +83,13 @@ export default class Login extends React.Component {
 
 const styles = StyleSheet.create({
 	image: {
-		paddingTop: '9%',
+		resizeMode: 'contain',
+		width:250,
+		height:71,
+		paddingTop: '15%',
+		left:'15%',
 		justifyContent:'center',
 		alignItems: 'center',
-		backgroundColor: 'transparent',
-		elevation: 2,
-		resizeMode: 'contain',
 	},
 	container: {
 		paddingLeft:'3%',
