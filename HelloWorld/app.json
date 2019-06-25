@@ -8,6 +8,11 @@
       "ios",
       "android"
     ],
+    "androidStatusBarColor": "#519387",
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#519387"
+    },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

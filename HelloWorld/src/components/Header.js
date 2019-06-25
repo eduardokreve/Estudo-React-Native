@@ -18,7 +18,6 @@ const Header = ({titulo}) => {
 
 const styles = StyleSheet.create({
     header: {
-        paddingTop:'3%',
         fontSize:30,
         textAlign:'center',
         justifyContent: 'center',
@@ -26,7 +25,7 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         backgroundColor:'#519387',
         width:width,
-        height:height/10.5,
+        height:height/16,
         elevation: 5
     },
 });

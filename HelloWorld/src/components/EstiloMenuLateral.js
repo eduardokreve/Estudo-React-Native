@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     header: {
         flex:1,
         width:'100%',
-        height:'15%',
+        height:'13%',
         backgroundColor:'#f7f7f7',
         borderColor:'#7a7a7a',
         borderWidth: 0.3,
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     },
     scrowView: {
         width:'100%',
-        height:'75%',
+        height:'72%',
         borderWidth: 0.3,
         borderColor:'#7a7a7a',
         backgroundColor:'#f7f7f7',
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     },
     footerView: {
         width:'100%',
-        height:'10%',
+        height:'13%',
         backgroundColor:'#f7f7f7',
         borderWidth: 0.3,
         borderColor:'#7a7a7a'
