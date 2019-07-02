@@ -2,6 +2,8 @@
 import React from 'react';
 import { View, StyleSheet} from 'react-native';
 
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 const FormRow = props => {
 	const { children, first, last } = props;
 	return ( //styles.container é um vetor
@@ -19,20 +21,22 @@ const FormRow = props => {
 //estilo do formulario
 const styles = StyleSheet.create ({
 	container: {
-		padding:12,
 		backgroundColor:'#ffffff',
+		paddingLeft:wp('5%'),
+		paddingTop:hp('2%'),
+		paddingBottom:hp('2%'),
 		borderRadius: 5,
-		margin:9,
-		width: '100%',
-		shadowOpacity: 0.2,
-		shadowRadius: 1,
+		margin:10,
+		width: wp('94%'),
+		shadowOpacity: 0.3,
+		shadowRadius: 1.3,
 		elevation: 2,
 	},
 	first: {
-		marginTop:10,
+		marginTop:hp('5%'),
 	},
 	last:{
-		marginBottom:10,
+		marginBottom:hp('5%'),
 	}
 });
 

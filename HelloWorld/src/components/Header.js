@@ -3,10 +3,9 @@ import {
     StyleSheet,
     Text, 
     View,
-    Dimensions
 } from 'react-native';
 
-const { width, height } = Dimensions.get('window'); //pega o tamanho da tela
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const Header = ({titulo}) => {
     return (
@@ -18,15 +17,15 @@ const Header = ({titulo}) => {
 
 const styles = StyleSheet.create({
     header: {
+        color: '#ffffff',
+        width:wp('100%'),
+        height:hp('100%')/16,
         fontSize:30,
+        elevation: 5,
         textAlign:'center',
         justifyContent: 'center',
         fontWeight:'bold',
-        color: '#ffffff',
         backgroundColor:'#519387',
-        width:width,
-        height:height/16,
-        elevation: 5
     },
 });
 

@@ -5,12 +5,11 @@ import {View,
 	Text, 
 	ActivityIndicator, 
 	TouchableOpacity,
-	Image,
-	Dimensions} from 'react-native';
+	Image} from 'react-native';
+
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 import FormRow from '../components/FormRow'
-
-const { width, height } = Dimensions.get('window'); //pega o tamanho da tela
 
 export default class Login extends React.Component {
 	constructor(props) {
@@ -47,7 +46,7 @@ export default class Login extends React.Component {
 
 	render() { //o que vai ser renderizado
 		return (
-			<View style = {{backgroundColor: '#f7f7f7', width:width, height:height}}>
+			<View style = {{backgroundColor: '#f7f7f7', width:wp('100%'), height:hp('100%'),}}>
 				<View style = {styles.image}>
 					<Image source={require('../../assets/login-logo.png')}/>	
 				</View>
@@ -83,27 +82,25 @@ export default class Login extends React.Component {
 
 const styles = StyleSheet.create({
 	image: {
-		resizeMode: 'contain',
-		width:250,
-		height:71,
-		paddingTop: '15%',
-		left:'15%',
 		justifyContent:'center',
 		alignItems: 'center',
+		resizeMode: 'contain',
+		width:wp('100%'),
+		height:hp('15%'),
 	},
 	container: {
-		paddingLeft:'3%',
-		paddingRight:'3%',
-		paddingTop:'20%',
+		paddingLeft:wp('3%'),
+		paddingRight:wp('3%'),
 		justifyContent: 'center',
 		alignItems: 'center',
-		width: '100%',
+		width: wp('100%'),
+		height:hp('85%'),
+		bottom:hp('10%'),
 	},
 	text:{
 		color:'#5c5c5c',
 		textAlign:'center',
 		fontSize:16,
-		paddingBottom:'4%',
 	},
 	input: {
 		paddingLeft:5,
@@ -113,11 +110,11 @@ const styles = StyleSheet.create({
 	},
 	textButton:{
 		width: '100%',
-		paddingLeft:'22%',
-		paddingRight:'22%',
-		paddingBottom:'3%',
-		paddingTop:'4%',
-		marginTop:'8%',
+		paddingLeft:wp('22%'),
+		paddingRight:wp('22%'),
+		paddingBottom:hp('2%'),
+		paddingTop:hp('2%'),
+		marginTop:hp('2.6%'),
 		backgroundColor: '#519387',
 		borderRadius: 3,
 		elevation: 5,

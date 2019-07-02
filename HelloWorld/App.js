@@ -3,7 +3,6 @@ import {
 	createStackNavigator, 
 	createAppContainer,
 } from 'react-navigation'; 
-import {Dimensions} from 'react-native';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { useScreens } from 'react-native-screens';
 
@@ -19,7 +18,7 @@ import Onibus from './src/pages/Onibus'
 
 import EstiloMenuLateral from './src/components/EstiloMenuLateral'
 
-const { width, height } = Dimensions.get('screen'); //pega o tamanho da tela
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 
 useScreens(); //otimização do react-navigation
 
@@ -36,7 +35,7 @@ const MenuNav = createDrawerNavigator(
 	},
 	{	
 		contentComponent: EstiloMenuLateral,
-		drawerWidth: Math.min(height, width) * 0.85,
+		drawerWidth: wp('80%'),
 		drawerType: 'slide',
 		drawerPosition: 'left',
 		headerMode: ' float ',
@@ -45,7 +44,7 @@ const MenuNav = createDrawerNavigator(
 		},
 	}
 )
-//https://reactnative.sataiva.com/reactnative-intro/reactnative-drawerNavigator/
+
 const NavegacaoPrincipal = createStackNavigator({
 		'LoginNavigation':{
 			screen:Login,

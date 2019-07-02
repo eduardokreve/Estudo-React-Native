@@ -1,55 +1,49 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity, Dimensions} from 'react-native'; 
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'; 
 
 import Header from '../components/Header'
 
-const { width, height } = Dimensions.get('window'); //pega o tamanho da tela
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 export default class Menu extends React.Component {
 	static navigationOptions = {
 		title: "Menu"
 	}
   	render() {
 		return (
-			<View style = {styles.Menu}>
+			<View style={{backgroundColor: '#f7f7f7'}}>
 				<Header titulo={"UFFS"} />
-				<Text style = {styles.MensagemMenu}>Seja bem vindo</Text>
-				<Text style = {styles.Deslizar}>Deslize para a direita</Text>
-				<TouchableOpacity onPress={() => { this.props.navigation.openDrawer() }}>
-					<Image style = {styles.Imagem} 
-						source={require('../../assets/seta_direita.png')}
-					/>
-				</TouchableOpacity>
-			</View>   
+				<View style = {styles.Menu}>
+					<Text style = {styles.MensagemMenu}>Seja bem vindo</Text>
+					<Text style = {styles.Deslizar}>Deslize para a direita</Text>
+					<TouchableOpacity onPress={() => { this.props.navigation.openDrawer() }}>
+						<Image style = {styles.Imagem} 
+							source={require('../../assets/seta_direita.png')}
+						/>
+					</TouchableOpacity>
+				</View>   
+			</View>
 		);
  	}
 }
 
 const styles = StyleSheet.create({
 	Menu: {
-		backgroundColor: '#f7f7f7',
-		width:width,
-        height:height,
+		height:hp('100%'),
+		width:wp('100%'),
+		justifyContent:'center',
+		alignItems: 'center',
+		bottom:hp('10%')
 	},
 	MensagemMenu: {
-		fontSize: 40,
+		fontSize: wp('9.75%'),
 		color:'#7a7a7a',
-		justifyContent:'center',
-		paddingTop:'45%',
-		paddingLeft:'12%',
 	},
 	Deslizar:{
-		fontSize: 18,
+		fontSize: wp('5%'),
 		color:'#7a7a7a',
-		justifyContent: 'center',
-		alignItems: 'center',
-		paddingTop:'5%',
-		paddingLeft:'28%',
 	},
 	Imagem:{	
-		width:90,
-		height:90,
-		alignItems: 'center',
-		justifyContent: 'center',
-		left:'35%'
+		height:hp('15%'),
+		width:wp('20%'),
 	}
 })

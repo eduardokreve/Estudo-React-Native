@@ -8,7 +8,7 @@ import  {Text,
     } from 'react-native';
 import { NavigationActions } from "react-navigation";
 
-const { width, height } = Dimensions.get('window'); //pega o tamanho da tela
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 export default class EstiloMenuLateral extends Component {
 
     navigateToScreen = route => () => {
@@ -94,36 +94,36 @@ export default class EstiloMenuLateral extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        width:width,
-        height:height,
+        width:wp('100%'),
+        height:hp('100%'),
     },
     header: {
         flex:1,
-        width:'100%',
-        height:'13%',
+        width:wp('100%'),
+        height:hp('13%'),
         backgroundColor:'#f7f7f7',
         borderColor:'#7a7a7a',
         borderWidth: 0.3,
+        justifyContent:'center',
+        alignItems:'flex-start', 
     },
     perfil:{
-        resizeMode: 'contain', 
-        width:64,
-        height:64, 
-        justifyContent:'center',
-        alignItems:'center', 
-        bottom:'20%',
-        left:'3%'
+        resizeMode:'contain', 
+        width:65,
+        height:65, 
+        bottom:hp('3%'),
+        left:wp('3%')
     },
     nomeUser: {
-        fontSize:28,
+        fontSize:wp('6%'),
         color: '#5c5c5c',
-        left:'25%',
-        top:'88%',
+        left:wp('25%'),
+        top:hp('4%'),
         fontWeight:'bold',
     },
     scrowView: {
-        width:'100%',
-        height:'72%',
+        width:wp('100%'),
+        height:hp('72%'),
         borderWidth: 0.3,
         borderColor:'#7a7a7a',
         backgroundColor:'#f7f7f7',
@@ -131,22 +131,20 @@ const styles = StyleSheet.create({
     touch:{
         alignContent:'flex-start',
         alignItems:'flex-start', 
-        paddingLeft:'5%',
+        paddingLeft:wp('5%'),
     },  
     image:{
         resizeMode: 'contain', 
-        width:35,
-        height:35, 
-        alignItems: 'center',
-		justifyContent: 'center',
+        width:wp('5%'),
+        height:hp('5%'), 
     },
     menus:{
         alignItems:'center',
         justifyContent:'center',
         color: '#5c5c5c',
-        fontSize: 16,
-        left:'20%',
-        bottom:'50%'
+        fontSize: wp('5%'),
+        left:wp('20%'),
+        bottom:hp('4.70%')
     },
     footerView: {
         width:'100%',
