@@ -23,12 +23,12 @@ export default class EstiloMenuLateral extends Component {
             <View style = {styles.container}>
                 
                 <View style = {styles.header}> 
-                        <TouchableOpacity/*onPress={this.navigateToScreen("Tela")}*/>
-                            <Text style={styles.nomeUser}>
-                                Usuário
-                            </Text> 
-                        </TouchableOpacity>
-                        <Image style={styles.perfil} source={require('../../assets/icone_usuario.png')}/>       
+                    <Image style={styles.perfil} source={require('../../assets/icone_usuario.png')}/>      
+                    <TouchableOpacity/*onPress={this.navigateToScreen("Tela")}*/>
+                        <Text style={styles.nomeUser}>
+                            Usuário
+                        </Text> 
+                    </TouchableOpacity> 
                 </View>
               
                 <View style={styles.scrowView}>
@@ -79,12 +79,12 @@ export default class EstiloMenuLateral extends Component {
                 </View>
 
                 <View style={styles.footerView}>
-                    <TouchableOpacity style={{padding:'6%'}} onPress={this.navigateToScreen("")}>
+                    <TouchableOpacity style={{padding:'5%'}}onPress={this.navigateToScreen("")}>
                         <Image style={styles.imageConfig} 
                             source={require('../../assets/configuração.png')}/> 
-                            <Text style={styles.menConf}>
-                                Configurações
-                            </Text> 
+                         <Text style={styles.menConf}>
+                            Configurações
+                        </Text> 
                     </TouchableOpacity>
                 </View>
             </View>
@@ -104,21 +104,20 @@ const styles = StyleSheet.create({
         backgroundColor:'#f7f7f7',
         borderColor:'#7a7a7a',
         borderWidth: 0.3,
-        justifyContent:'center',
-        alignItems:'flex-start', 
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems:'center',
+        padding:'3%'
     },
     perfil:{
         resizeMode:'contain', 
-        width:65,
-        height:65, 
-        bottom:hp('3%'),
-        left:wp('3%')
+        width:wp('20%'),
+        height:hp('20%'), 
     },
     nomeUser: {
         fontSize:wp('6%'),
         color: '#5c5c5c',
-        left:wp('25%'),
-        top:hp('4%'),
+        left:wp('15%'),
         fontWeight:'bold',
     },
     scrowView: {
@@ -135,39 +134,36 @@ const styles = StyleSheet.create({
     },  
     image:{
         resizeMode: 'contain', 
-        width:wp('5%'),
-        height:hp('5%'), 
+        width:wp('9.5%'),
+        height:hp('9.5%'), 
     },
     menus:{
         alignItems:'center',
-        justifyContent:'center',
+        justifyContent:'space-between',
         color: '#5c5c5c',
         fontSize: wp('5%'),
-        left:wp('20%'),
-        bottom:hp('4.70%')
+        left:wp('15%'),
+        bottom:hp('6.75%')
     },
     footerView: {
-        width:'100%',
-        height:'13%',
+        width:wp('100%'),
+        height:hp('13%'),
         backgroundColor:'#f7f7f7',
         borderWidth: 0.3,
-        borderColor:'#7a7a7a'
-    },
-    menConf:{
-        alignItems:'center',
-        justifyContent:'center',
-        color: '#5c5c5c',
-        fontSize:18,
-        fontWeight:'bold',
-        left:'22.5%',
-        bottom:'45%'
+        borderColor:'#7a7a7a',
+        flexDirection: 'row',
     },
     imageConfig:{
         resizeMode: 'contain', 
-        justifyContent:'flex-start', 
-        alignItems:'center', 
-        width:35,
-        height:35, 
-        bottom:'10%'
+        width:wp('9.8%'),
+        height:hp('9.8%'), 
+        bottom:hp('2%')
+    },
+    menConf:{
+        color: '#5c5c5c',
+        fontSize:wp('5%'),
+        fontWeight:'bold',
+        left:wp('15%'),
+        bottom:hp('9%')
     }
 })
