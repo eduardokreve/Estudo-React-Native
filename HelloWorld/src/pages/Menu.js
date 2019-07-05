@@ -11,16 +11,20 @@ export default class Menu extends React.Component {
   	render() {
 		return (
 			<View style={{backgroundColor: '#f7f7f7'}}>
-				<Header titulo={"UFFS"} />
 				<View style = {styles.Menu}>
-					<Text style = {styles.MensagemMenu}>Seja bem vindo</Text>
-					<Text style = {styles.Deslizar}>Deslize para a direita</Text>
+					<Header/>
+					<View style={{flexDirection: 'column', justifyContent:'center', alignItems:'center'}}>
+						<Text style = {styles.MensagemMenu}>Seja bem vindo</Text>
+						<Text style = {styles.Deslizar}>Deslize para a direita</Text>
+					</View>
+				</View> 
+				<View style={styles.rodape}>
 					<TouchableOpacity onPress={() => { this.props.navigation.openDrawer() }}>
-						<Image style = {styles.Imagem} 
-							source={require('../../assets/seta_direita.png')}
+						<Image style = {styles.icone} 
+							source={require('../../assets/menu.png')}
 						/>
 					</TouchableOpacity>
-				</View>   
+				</View>  
 			</View>
 		);
  	}
@@ -28,11 +32,8 @@ export default class Menu extends React.Component {
 
 const styles = StyleSheet.create({
 	Menu: {
-		height:hp('100%'),
 		width:wp('100%'),
-		justifyContent:'center',
-		alignItems: 'center',
-		bottom:hp('10%')
+		height:hp('88%'),
 	},
 	MensagemMenu: {
 		fontSize: wp('9.75%'),
@@ -42,8 +43,18 @@ const styles = StyleSheet.create({
 		fontSize: wp('5%'),
 		color:'#7a7a7a',
 	},
-	Imagem:{	
+	rodape:{
+		width:wp('100%'),
+		height:hp('12%'),
+		backgroundColor:'#519387',
+		justifyContent: 'center',
+		alignItems:'center',
+		elevation: 5,
+	},
+	icone:{
+		bottom:hp('1.75%'),
+		resizeMode: 'contain', 
 		height:hp('15%'),
-		width:wp('20%'),
+		width:wp('15%'),
 	}
 })

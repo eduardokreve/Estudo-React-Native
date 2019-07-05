@@ -16,6 +16,7 @@ import Eventos from './src/pages/Eventos'
 import Aula from './src/pages/Aula'
 import Onibus from './src/pages/Onibus'
 
+import Header from './src/components/Header'
 import EstiloMenuLateral from './src/components/EstiloMenuLateral'
 
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
@@ -31,7 +32,8 @@ const MenuNav = createDrawerNavigator(
 		Uteis: {screen: Uteis},
 		Eventos: {screen: Eventos},
 		Aula: {screen: Aula},
-		Onibus: {screen: Onibus}
+		Onibus: {screen: Onibus},
+
 	},
 	{	
 		contentComponent: EstiloMenuLateral,
@@ -40,7 +42,7 @@ const MenuNav = createDrawerNavigator(
 		drawerPosition: 'left',
 		headerMode: ' float ',
 		navigationOptions:{
-			header: null,
+			header: Header,
 		},
 	}
 )
@@ -62,7 +64,7 @@ const NavegacaoPrincipal = createStackNavigator({
 const AppContainer = createAppContainer(NavegacaoPrincipal);
 
 export default class App extends React.Component {
-  render() {
-    return <AppContainer />;
-  }
+	render() {
+    	return <AppContainer />;
+  	}
 }

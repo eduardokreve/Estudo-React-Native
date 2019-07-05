@@ -11,7 +11,7 @@ export default class Uteis extends React.Component {
   	render() {
 		return (
 			<View style = {styles.Menu}>
-				<Header titulo={"UFFS"} />
+				<Header/>
 				<Text>Uteis</Text>
 			</View>   
 		);

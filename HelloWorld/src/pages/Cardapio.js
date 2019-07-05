@@ -11,7 +11,7 @@ export default class Cardapio extends React.Component {
   	render() {
 		return (
 			<View style = {styles.Menu}>
-				<Header titulo={"UFFS"} />
+				<Header/>
 				<Text>Cardapio</Text>
 			</View>   
 		);

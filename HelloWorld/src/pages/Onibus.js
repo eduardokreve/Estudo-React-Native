@@ -11,7 +11,7 @@ export default class Onibus extends React.Component {
   	render() {
 		return (
 			<View style = {styles.Menu}>
-				<Header titulo={"UFFS"} />
+				<Header/>
 				<Text>Horário de ônibus</Text>
 			</View>   
 		);

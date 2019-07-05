@@ -11,7 +11,7 @@ export default class Eventos extends React.Component {
   	render() {
 		return (
 			<View style = {styles.Menu}>
-				<Header titulo={"UFFS"} />
+				<Header/>
 				<Text>Eventos</Text>
 			</View>   
 		);

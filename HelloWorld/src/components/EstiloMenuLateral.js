@@ -4,7 +4,6 @@ import  {Text,
     StyleSheet, 
     TouchableOpacity,
     Image,
-    Dimensions
     } from 'react-native';
 import { NavigationActions } from "react-navigation";
 
@@ -79,7 +78,7 @@ export default class EstiloMenuLateral extends Component {
                 </View>
 
                 <View style={styles.footerView}>
-                    <TouchableOpacity style={{padding:'5%'}}onPress={this.navigateToScreen("")}>
+                    <TouchableOpacity onPress={this.navigateToScreen("")}>
                         <Image style={styles.imageConfig} 
                             source={require('../../assets/configuração.png')}/> 
                          <Text style={styles.menConf}>
@@ -147,23 +146,26 @@ const styles = StyleSheet.create({
     },
     footerView: {
         width:wp('100%'),
-        height:hp('13%'),
+        height:hp('12%'),
         backgroundColor:'#f7f7f7',
         borderWidth: 0.3,
         borderColor:'#7a7a7a',
         flexDirection: 'row',
+        justifyContent:'flex-start',
+        alignContent:'center',
+        alignItems:'flex-start', 
+
     },
     imageConfig:{
         resizeMode: 'contain', 
         width:wp('9.8%'),
         height:hp('9.8%'), 
-        bottom:hp('2%')
+        
     },
     menConf:{
         color: '#5c5c5c',
         fontSize:wp('5%'),
         fontWeight:'bold',
-        left:wp('15%'),
-        bottom:hp('9%')
+     
     }
 })

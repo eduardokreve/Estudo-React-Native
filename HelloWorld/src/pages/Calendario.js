@@ -1,15 +1,13 @@
 import React from 'react';
-import {View, StyleSheet, Dimensions} from 'react-native'; 
-import { createMaterialTopTabNavigator,
-	createAppContainer,
-} from 'react-navigation'; 
+import {View, StyleSheet,  TouchableOpacity, Image} from 'react-native'; 
+import { createMaterialTopTabNavigator, createAppContainer} from 'react-navigation'; 
 
 import Header from '../components/Header'
 //teste com tabnavigator
 import FirstPage from '../components/Firstpage'
 import SecondPage from '../components/SecondPage'
 
-const { width, height } = Dimensions.get('window'); //pega o tamanho da tela
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const TabScreen = createMaterialTopTabNavigator(
 	{
@@ -34,7 +32,7 @@ const TabScreen = createMaterialTopTabNavigator(
 				color:'black'
 			},
 			tabStyle: {
-				width: Dimensions.get('window').width / 3,
+				width: wp('100%') / 3,
 			},
 			style: {
 				backgroundColor: 'white',
@@ -58,10 +56,21 @@ export default class Calendario extends React.Component {
 	}
   	render() {
 		return (
-			<View style = {styles.Menu}>
-				<Header titulo={"UFFS"} />
-				<Meses style= {styles.Meses}/>
-			</View>   
+			<View style={{backgroundColor: '#f7f7f7',}}>
+				<View style={styles.Menu}>
+					<Header/>
+					<Meses/>
+				</View>   
+
+				<View style={styles.rodape}>
+					<TouchableOpacity onPress={() => { this.props.navigation.openDrawer() }}>
+						<Image style = {styles.icone} 
+							source={require('../../assets/menu.png')}
+						/>
+					</TouchableOpacity>
+				</View>  
+
+			</View>
 		);
  	}
 }
@@ -69,8 +78,21 @@ export default class Calendario extends React.Component {
 
 const styles = StyleSheet.create({
 	Menu: {
-		backgroundColor: '#f7f7f7',
-		width:width,
-    height:height,
+		width:wp('100%'),
+		height:hp('88%'),
+	},
+	rodape:{
+		width:wp('100%'),
+		height:hp('12%'),
+		backgroundColor:'#519387',
+		justifyContent: 'center',
+		alignItems:'center',
+		elevation: 5,
+	},
+	icone:{
+		bottom:hp('1.75%'),
+		resizeMode: 'contain', 
+		height:hp('15%'),
+		width:wp('15%'),
 	}
 })
