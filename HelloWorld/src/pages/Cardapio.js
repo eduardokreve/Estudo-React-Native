@@ -1,19 +1,22 @@
 import React from 'react';
-import {View, Text, StyleSheet,Dimensions} from 'react-native'; 
+import {View, Text, StyleSheet} from 'react-native'; 
 
 import Header from '../components/Header'
-
-const { width, height } = Dimensions.get('window'); //pega o tamanho da tela
+import GeneralStatusBarColor from '../components/GeneralStatusBarColor'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 export default class Cardapio extends React.Component {
 	static navigationOptions = {
 		title: "Cardápio R.U"
 	}
   	render() {
 		return (
-			<View style = {styles.Menu}>
-				<Header/>
-				<Text>Cardapio</Text>
-			</View>   
+			<View>
+				<GeneralStatusBarColor backgroundColor="#519387" barStyle="light-content"/>
+				<View style = {styles.Menu}>
+					<Header/>
+					<Text>Cardapio</Text>
+				</View>   
+			</View>
 		);
  	}
 }
@@ -22,7 +25,7 @@ export default class Cardapio extends React.Component {
 const styles = StyleSheet.create({
 	Menu: {
 		backgroundColor: '#f7f7f7',
-		width:width,
-        height:height,
+		width:wp('100%'),
+		height:hp('100%'),
 	}
 })

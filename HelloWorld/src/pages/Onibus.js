@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, Dimensions} from 'react-native'; 
 
 import Header from '../components/Header'
-
+import GeneralStatusBarColor from '../components/GeneralStatusBarColor'
 const { width, height } = Dimensions.get('window'); //pega o tamanho da tela
 export default class Onibus extends React.Component {
 	static navigationOptions = {
@@ -10,10 +10,14 @@ export default class Onibus extends React.Component {
 	}
   	render() {
 		return (
-			<View style = {styles.Menu}>
-				<Header/>
-				<Text>Horário de ônibus</Text>
-			</View>   
+			<View>
+				<GeneralStatusBarColor backgroundColor="#519387" barStyle="light-content"/>
+			
+				<View style = {styles.Menu}>
+					<Header/>
+					<Text>Horário de ônibus</Text>
+				</View> 
+			</View>  
 		);
  	}
 }

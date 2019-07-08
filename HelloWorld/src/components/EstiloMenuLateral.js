@@ -6,7 +6,7 @@ import  {Text,
     Image,
     } from 'react-native';
 import { NavigationActions } from "react-navigation";
-
+import GeneralStatusBarColor from './GeneralStatusBarColor'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 export default class EstiloMenuLateral extends Component {
 
@@ -19,72 +19,76 @@ export default class EstiloMenuLateral extends Component {
 
     render() {
         return(
-            <View style = {styles.container}>
+            <View>
+                <GeneralStatusBarColor backgroundColor="#519387" barStyle="light-content"/>
+            
+                <View style = {styles.container}>
+                    
+                    <View style = {styles.header}> 
+                        <Image style={styles.perfil} source={require('../../assets/icone_usuario.png')}/>      
+                        <TouchableOpacity/*onPress={this.navigateToScreen("Tela")}*/>
+                            <Text style={styles.nomeUser}>
+                                Usuário
+                            </Text> 
+                        </TouchableOpacity> 
+                    </View>
                 
-                <View style = {styles.header}> 
-                    <Image style={styles.perfil} source={require('../../assets/icone_usuario.png')}/>      
-                    <TouchableOpacity/*onPress={this.navigateToScreen("Tela")}*/>
-                        <Text style={styles.nomeUser}>
-                            Usuário
-                        </Text> 
-                    </TouchableOpacity> 
-                </View>
-              
-                <View style={styles.scrowView}>
-                    <View style={{flex: 1, flexDirection: 'column', marginTop:'5%', justifyContent: 'space-evenly'}}>
-                       
-                        <TouchableOpacity style={styles.touch} onPress={this.navigateToScreen("Calendario")}>
-                            <Image style={styles.image} source={require('../../assets/calendario_academico.png')}/> 
-                            <Text style={styles.menus}>
-                                Calendário Acadêmico
-                            </Text> 
-                        </TouchableOpacity>
+                    <View style={styles.scrowView}>
+                        <View style={{flex: 1, flexDirection: 'column', marginTop:'5%', justifyContent: 'space-evenly'}}>
                         
-                        <TouchableOpacity style={styles.touch} onPress={this.navigateToScreen("Cardapio")}>
-                            <Image style={styles.image} source={require('../../assets/ru.png')}/> 
-                            <Text style={styles.menus}>
-                                Cardápio R.U
-                            </Text> 
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity style={styles.touch} onPress={this.navigateToScreen("Uteis")}>
-                            <Image style={styles.image} source={require('../../assets/links.png')}/> 
-                            <Text style={styles.menus}>
-                                Úteis
-                            </Text> 
-                        </TouchableOpacity>
+                            <TouchableOpacity style={styles.touch} onPress={this.navigateToScreen("Calendario")}>
+                                <Image style={styles.image} source={require('../../assets/calendario_academico.png')}/> 
+                                <Text style={styles.menus}>
+                                    Calendário Acadêmico
+                                </Text> 
+                            </TouchableOpacity>
+                            
+                            <TouchableOpacity style={styles.touch} onPress={this.navigateToScreen("Cardapio")}>
+                                <Image style={styles.image} source={require('../../assets/ru.png')}/> 
+                                <Text style={styles.menus}>
+                                    Cardápio R.U
+                                </Text> 
+                            </TouchableOpacity>
+                            
+                            <TouchableOpacity style={styles.touch} onPress={this.navigateToScreen("Uteis")}>
+                                <Image style={styles.image} source={require('../../assets/links.png')}/> 
+                                <Text style={styles.menus}>
+                                    Úteis
+                                </Text> 
+                            </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.touch} onPress={this.navigateToScreen("Eventos")}>
-                            <Image style={styles.image} source={require('../../assets/eventos.png')}/> 
-                            <Text style={styles.menus}>
-                                Eventos
-                            </Text> 
-                        </TouchableOpacity>
+                            <TouchableOpacity style={styles.touch} onPress={this.navigateToScreen("Eventos")}>
+                                <Image style={styles.image} source={require('../../assets/eventos.png')}/> 
+                                <Text style={styles.menus}>
+                                    Eventos
+                                </Text> 
+                            </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.touch} onPress={this.navigateToScreen("Aula")}>
-                            <Image style={styles.image} source={require('../../assets/horario_aula.png')}/> 
-                            <Text style={styles.menus}>
-                                Horários aula
-                            </Text> 
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity style={styles.touch} onPress={this.navigateToScreen("Onibus")}>
-                            <Image style={styles.image} source={require('../../assets/horario_onibus.png')}/> 
-                            <Text style={styles.menus}>
-                                Horário de ônibus
+                            <TouchableOpacity style={styles.touch} onPress={this.navigateToScreen("Aula")}>
+                                <Image style={styles.image} source={require('../../assets/horario_aula.png')}/> 
+                                <Text style={styles.menus}>
+                                    Horários aula
+                                </Text> 
+                            </TouchableOpacity>
+                            
+                            <TouchableOpacity style={styles.touch} onPress={this.navigateToScreen("Onibus")}>
+                                <Image style={styles.image} source={require('../../assets/horario_onibus.png')}/> 
+                                <Text style={styles.menus}>
+                                    Horário de ônibus
+                                </Text> 
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                    <View style={styles.footerView}>
+                        <TouchableOpacity onPress={this.navigateToScreen("")}>
+                            <Image style={styles.imageConfig} 
+                                source={require('../../assets/configuração.png')}/> 
+                            <Text style={styles.menConf}>
+                                Configurações
                             </Text> 
                         </TouchableOpacity>
                     </View>
-                </View>
-
-                <View style={styles.footerView}>
-                    <TouchableOpacity onPress={this.navigateToScreen("")}>
-                        <Image style={styles.imageConfig} 
-                            source={require('../../assets/configuração.png')}/> 
-                         <Text style={styles.menConf}>
-                            Configurações
-                        </Text> 
-                    </TouchableOpacity>
                 </View>
             </View>
         );

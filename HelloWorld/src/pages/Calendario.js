@@ -3,6 +3,7 @@ import {View, StyleSheet,  TouchableOpacity, Image} from 'react-native';
 import { createMaterialTopTabNavigator, createAppContainer} from 'react-navigation'; 
 
 import Header from '../components/Header'
+import GeneralStatusBarColor from '../components/GeneralStatusBarColor'
 //teste com tabnavigator
 import FirstPage from '../components/Firstpage'
 import SecondPage from '../components/SecondPage'
@@ -56,20 +57,23 @@ export default class Calendario extends React.Component {
 	}
   	render() {
 		return (
-			<View style={{backgroundColor: '#f7f7f7',}}>
-				<View style={styles.Menu}>
-					<Header/>
-					<Meses/>
-				</View>   
+			<View>
+				<GeneralStatusBarColor backgroundColor="#519387" barStyle="light-content"/>
+				<View style={{backgroundColor: '#f7f7f7',}}>
+					<View style={styles.Menu}>
+						<Header/>
+						<Meses/>
+					</View>   
 
-				<View style={styles.rodape}>
-					<TouchableOpacity onPress={() => { this.props.navigation.openDrawer() }}>
-						<Image style = {styles.icone} 
-							source={require('../../assets/menu.png')}
-						/>
-					</TouchableOpacity>
-				</View>  
+					<View style={styles.rodape}>
+						<TouchableOpacity onPress={() => { this.props.navigation.openDrawer() }}>
+							<Image style = {styles.icone} 
+								source={require('../../assets/menu.png')}
+							/>
+						</TouchableOpacity>
+					</View>  
 
+				</View>
 			</View>
 		);
  	}
