@@ -2,9 +2,7 @@ import React from 'react';
 import {
     StyleSheet,
     Text, 
-    View,
-    Image,
-    TouchableOpacity
+    View
 } from 'react-native';
 
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
@@ -21,17 +19,21 @@ export default class Header extends React.Component {
 
 const styles = StyleSheet.create({
     header:{
-        backgroundColor:'#519387',
-        elevation: 5,
         width:wp('100%'),
         height:hp('100%')/16,
         flexDirection: 'row',
+        alignItems:'center',
         justifyContent:'center',
+        backgroundColor:'#519387',
+        elevation: 5, //android > 5.0
+        //ios
+        shadowOpacity:1, 
+        shadowOffset:{height:6,width:0},
+        shadowOpacity:0.3
     },
     title: {
         color: '#ffffff',
-        fontSize:30,
-        textAlign:'center',
+        fontSize: 40,
         fontWeight:'bold',
     }
 });
