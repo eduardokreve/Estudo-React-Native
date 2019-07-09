@@ -2,8 +2,10 @@ import React from 'react';
 import {View, StyleSheet,  TouchableOpacity, Image} from 'react-native'; 
 import { createMaterialTopTabNavigator, createAppContainer} from 'react-navigation'; 
 
-import Header from '../components/Header'
 import GeneralStatusBarColor from '../components/GeneralStatusBarColor'
+import Header from '../components/Header'
+import styleRodape from '../components/styles/Rodape'
+
 //teste com tabnavigator
 import FirstPage from '../components/Firstpage'
 import SecondPage from '../components/SecondPage'
@@ -65,9 +67,9 @@ export default class Calendario extends React.Component {
 						<Meses/>
 					</View>   
 
-					<View style={styles.rodape}>
+					<View style={styleRodape.rodape}>
 						<TouchableOpacity onPress={() => { this.props.navigation.openDrawer() }}>
-							<Image style = {styles.icone} 
+							<Image style = {styleRodape.icone} 
 								source={require('../../assets/menu.png')}
 							/>
 						</TouchableOpacity>
@@ -85,18 +87,4 @@ const styles = StyleSheet.create({
 		width:wp('100%'),
 		height:hp('88%'),
 	},
-	rodape:{
-		width:wp('100%'),
-		height:hp('12%'),
-		backgroundColor:'#519387',
-		justifyContent: 'center',
-		alignItems:'center',
-		elevation: 5,
-	},
-	icone:{
-		bottom:hp('1.75%'),
-		resizeMode: 'contain', 
-		height:hp('15%'),
-		width:wp('15%'),
-	}
 })
