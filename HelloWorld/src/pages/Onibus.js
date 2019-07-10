@@ -1,9 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, Dimensions} from 'react-native'; 
+import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'; 
 
-import Header from '../components/Header'
 import GeneralStatusBarColor from '../components/GeneralStatusBarColor'
-const { width, height } = Dimensions.get('window'); //pega o tamanho da tela
+import Header from '../components/Header'
+import styleRodape from '../components/styles/Rodape'
+
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 export default class Onibus extends React.Component {
 	static navigationOptions = {
 		title: "Horário de ônibus"
@@ -12,11 +15,17 @@ export default class Onibus extends React.Component {
 		return (
 			<View>
 				<GeneralStatusBarColor backgroundColor="#519387" barStyle="light-content"/>
-			
 				<View style = {styles.Menu}>
 					<Header/>
 					<Text>Horário de ônibus</Text>
 				</View> 
+				<View style={styleRodape.rodape}>
+					<TouchableOpacity onPress={() => { this.props.navigation.openDrawer() }}>
+						<Image style = {styleRodape.icone} 
+							source={require('../../assets/menu.png')}
+						/>
+					</TouchableOpacity>
+				</View>
 			</View>  
 		);
  	}
@@ -26,7 +35,7 @@ export default class Onibus extends React.Component {
 const styles = StyleSheet.create({
 	Menu: {
 		backgroundColor: '#f7f7f7',
-		width: width,
-        height: height,
+		width:wp('100%'),
+		height:hp('88%'),
 	}
 })

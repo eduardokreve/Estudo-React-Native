@@ -1,8 +1,10 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native'; 
+import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'; 
 
-import Header from '../components/Header'
 import GeneralStatusBarColor from '../components/GeneralStatusBarColor'
+import Header from '../components/Header'
+import styleRodape from '../components/styles/Rodape'
+
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 export default class Cardapio extends React.Component {
 	static navigationOptions = {
@@ -15,7 +17,14 @@ export default class Cardapio extends React.Component {
 				<View style = {styles.Menu}>
 					<Header/>
 					<Text>Cardapio</Text>
-				</View>   
+				</View>  
+				<View style={styleRodape.rodape}>
+					<TouchableOpacity onPress={() => { this.props.navigation.openDrawer() }}>
+						<Image style = {styleRodape.icone} 
+							source={require('../../assets/menu.png')}
+						/>
+					</TouchableOpacity>
+				</View>  
 			</View>
 		);
  	}
@@ -26,6 +35,6 @@ const styles = StyleSheet.create({
 	Menu: {
 		backgroundColor: '#f7f7f7',
 		width:wp('100%'),
-		height:hp('100%'),
+		height:hp('88%'),
 	}
 })
