@@ -26,7 +26,7 @@ export default class EstiloMenuLateral extends Component {
                     
                     <View style = {styles.header}> 
                         <Image style={styles.perfil} source={require('../../assets/icone_usuario.png')}/>      
-                        <TouchableOpacity/*onPress={this.navigateToScreen("Tela")}*/>
+                        <TouchableOpacity>
                             <Text style={styles.nomeUser}>
                                 Usuário
                             </Text> 
@@ -81,7 +81,7 @@ export default class EstiloMenuLateral extends Component {
                     </View>
 
                     <View style={styles.footerView}>
-                        <TouchableOpacity onPress={this.navigateToScreen("")}>
+                        <TouchableOpacity onPress={this.navigateToScreen("Menu")}>
                             <Image style={styles.imageConfig} 
                                 source={require('../../assets/configuração.png')}/> 
                             <Text style={styles.menConf}>
@@ -155,21 +155,22 @@ const styles = StyleSheet.create({
         borderWidth: 0.3,
         borderColor:'#7a7a7a',
         flexDirection: 'row',
-        justifyContent:'flex-start',
+        justifyContent:'space-between',
         alignContent:'center',
-        alignItems:'flex-start', 
-
+        alignItems:'center', 
     },
     imageConfig:{
         resizeMode: 'contain', 
         width:wp('9.8%'),
         height:hp('9.8%'), 
-        
+        left:wp('3%'),
+        top:hp('0.7%')
     },
     menConf:{
-        color: '#5c5c5c',
-        fontSize:wp('5%'),
+        color:'#5c5c5c',
+        fontSize:wp('7%'),
         fontWeight:'bold',
-     
+        left:wp('20%'),
+        bottom:hp('7%')
     }
 })

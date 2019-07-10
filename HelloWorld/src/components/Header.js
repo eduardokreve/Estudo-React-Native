@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     },
     title: {
         color: '#ffffff',
-        fontSize: 40,
+        fontSize: 38,
         fontWeight:'bold',
     }
 });

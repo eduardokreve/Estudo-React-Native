@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 		height:hp('88%'),
 	},
 	MensagemMenu: {
-		fontSize: wp('9.75%'),
+		fontSize: wp('12%'),
 		color:'#7a7a7a',
 	},
 })
