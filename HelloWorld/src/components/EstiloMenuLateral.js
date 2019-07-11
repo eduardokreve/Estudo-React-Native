@@ -3,7 +3,7 @@ import  {Text,
     View, 
     StyleSheet, 
     TouchableOpacity,
-    Image,
+    Image
     } from 'react-native';
 import { NavigationActions } from "react-navigation";
 import GeneralStatusBarColor from './GeneralStatusBarColor'
@@ -77,10 +77,12 @@ export default class EstiloMenuLateral extends Component {
                                     Horário de ônibus
                                 </Text> 
                             </TouchableOpacity>
+
                         </View>
                     </View>
 
                     <View style={styles.footerView}>
+
                         <TouchableOpacity onPress={this.navigateToScreen("Menu")}>
                             <Image style={styles.imageConfig} 
                                 source={require('../../assets/configuração.png')}/> 
@@ -88,8 +90,11 @@ export default class EstiloMenuLateral extends Component {
                                 Configurações
                             </Text> 
                         </TouchableOpacity>
+
                     </View>
+
                 </View>
+                
             </View>
         );
     }

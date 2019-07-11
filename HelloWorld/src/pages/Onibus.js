@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'; 
+import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'
 
 import GeneralStatusBarColor from '../components/GeneralStatusBarColor'
 import Header from '../components/Header'
 import styleRodape from '../components/styles/Rodape'
 
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 
 export default class Onibus extends React.Component {
 	static navigationOptions = {
@@ -15,7 +15,7 @@ export default class Onibus extends React.Component {
 		return (
 			<View>
 				<GeneralStatusBarColor backgroundColor="#519387" barStyle="light-content"/>
-				<View style = {styles.Menu}>
+				<View style = {styles.menu}>
 					<Header/>
 					<Text>Horário de ônibus</Text>
 				</View> 
@@ -27,15 +27,14 @@ export default class Onibus extends React.Component {
 					</TouchableOpacity>
 				</View>
 			</View>  
-		);
+		)
  	}
 }
 
-
 const styles = StyleSheet.create({
-	Menu: {
+	menu: {
 		backgroundColor: '#f7f7f7',
 		width:wp('100%'),
-		height:hp('88%'),
+		height:hp('88%')
 	}
 })

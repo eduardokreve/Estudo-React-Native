@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'; 
+import React from 'react'
+import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'
 
 import GeneralStatusBarColor from '../components/GeneralStatusBarColor'
 import Header from '../components/Header'
@@ -14,7 +14,7 @@ export default class Uteis extends React.Component {
 		return (
 			<View>
 				<GeneralStatusBarColor backgroundColor="#519387" barStyle="light-content"/>
-				<View style = {styles.Menu}>
+				<View style = {styles.menu}>
 					<Header/>
 					<Text>Uteis</Text>
 				</View> 
@@ -32,9 +32,9 @@ export default class Uteis extends React.Component {
 
 
 const styles = StyleSheet.create({
-	Menu: {
+	menu: {
 		backgroundColor: '#f7f7f7',
 		width:wp('100%'),
-        height:hp('88%'),
+        height:hp('88%')
 	}
 })

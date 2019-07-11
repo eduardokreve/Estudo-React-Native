@@ -1,15 +1,14 @@
-import React from 'react';
+import React from 'react'
 import {View, 
 	StyleSheet, 
 	TextInput, 
 	Text, 
 	ActivityIndicator, 
 	TouchableOpacity,
-	Image} from 'react-native';
-import GeneralStatusBarColor from '../components/GeneralStatusBarColor'
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-
+	Image} from 'react-native'
 import FormRow from '../components/FormRow'
+import GeneralStatusBarColor from '../components/GeneralStatusBarColor'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 
 export default class Login extends React.Component {
 	constructor(props) {
@@ -19,7 +18,7 @@ export default class Login extends React.Component {
 			email: '',
 			password: '',
 			isLoading: false,
-			message: '',
+			message: ''
 		}
 	}
 	//função que seta os valores para email e password (novos valores)
@@ -31,9 +30,8 @@ export default class Login extends React.Component {
 
 	renderButton() {
 		//mostra que está carregando
-		if (this.state.isLoading)
-			return <ActivityIndicator/>;
-
+		if (this.state.isLoading) 
+			return <ActivityIndicator/>
 		return (
 			<View style={styles.button}>
 				<TouchableOpacity style={styles.textButton}
@@ -41,10 +39,10 @@ export default class Login extends React.Component {
 				<Text style={{color:'white', fontSize:24}}>ENTRAR</Text>
 				</TouchableOpacity>
 			</View>	
-		);
+		)
 	}
 
-	render() { //o que vai ser renderizado
+	render() { 
 		return (
 			<View>
 				<GeneralStatusBarColor backgroundColor="#519387" barStyle="light-content"/>
@@ -89,7 +87,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		resizeMode: 'contain',
 		width:wp('100%'),
-		height:hp('15%'),
+		height:hp('15%')
 	},
 	container: {
 		paddingLeft:wp('3%'),
@@ -98,18 +96,18 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		width: wp('100%'),
 		height:hp('85%'),
-		bottom:hp('10%'),
+		bottom:hp('10%')
 	},
 	text:{
 		color:'#5c5c5c',
 		textAlign:'center',
-		fontSize:16,
+		fontSize:16
 	},
 	input: {
 		paddingLeft:5,
 		paddingRight: 5,
 		paddingBottom: 7,
-		fontSize:19,
+		fontSize:19
 	},
 	textButton:{
 		width: '100%',
@@ -120,6 +118,6 @@ const styles = StyleSheet.create({
 		marginTop:hp('2.6%'),
 		backgroundColor: '#519387',
 		borderRadius: 3,
-		elevation: 5,
+		elevation: 5
 	}
-});
+})

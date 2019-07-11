@@ -1,11 +1,11 @@
-import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'; 
+import React from 'react'
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'
 
 import GeneralStatusBarColor from '../components/GeneralStatusBarColor'
 import Header from '../components/Header'
 import styleRodape from '../components/styles/Rodape'
 
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 export default class Menu extends React.Component {
 	static navigationOptions = {
 		title: "Menu"
@@ -15,10 +15,10 @@ export default class Menu extends React.Component {
 			<View>
 				<GeneralStatusBarColor backgroundColor="#519387" barStyle="light-content"/>
 				<View style={{backgroundColor: '#f7f7f7'}}>
-					<View style = {styles.Menu}>
+					<View style = {styles.menu}>
 						<Header/>
 						<View style={{flex:1, flexDirection: 'row', justifyContent:'center', alignItems:'center'}}>
-							<Text style = {styles.MensagemMenu}>Seja bem vindo</Text>
+							<Text style = {styles.mensagemMenu}>Seja bem vindo</Text>
 						</View>
 					</View> 
 					<View style={styleRodape.rodape}>
@@ -35,12 +35,12 @@ export default class Menu extends React.Component {
 }
 
 const styles = StyleSheet.create({
-	Menu: {
+	menu: {
 		width:wp('100%'),
-		height:hp('88%'),
+		height:hp('88%')
 	},
-	MensagemMenu: {
+	mensagemMenu: {
 		fontSize: wp('12%'),
-		color:'#7a7a7a',
-	},
+		color:'#7a7a7a'
+	}
 })

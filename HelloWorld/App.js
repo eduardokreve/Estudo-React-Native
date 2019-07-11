@@ -23,8 +23,8 @@ import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 
 useScreens(); //otimização do react-navigation
 
-
 const MenuNav = createDrawerNavigator(
+	//telas do app mostradas no drawer navigator
 	{
 		Menu: {screen: Menu},
 		Calendario: {screen: Calendario},
@@ -33,8 +33,8 @@ const MenuNav = createDrawerNavigator(
 		Eventos: {screen: Eventos},
 		Aula: {screen: Aula},
 		Onibus: {screen: Onibus},
-
 	},
+	//configuração do menu drawer navigator
 	{	
 		contentComponent: EstiloMenuLateral,
 		drawerWidth: wp('80%'),
@@ -58,7 +58,7 @@ const NavegacaoPrincipal = createStackNavigator({
 			screen: MenuNav,
 		},
   
-		initialRouteName: 'LoginNavigation'
+		initialRouteName: 'LoginNavigation' //primeira tela a ser exibida no app
 });
 
 const AppContainer = createAppContainer(NavegacaoPrincipal);

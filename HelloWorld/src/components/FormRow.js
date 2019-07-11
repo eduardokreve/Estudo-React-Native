@@ -7,7 +7,6 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 const FormRow = props => {
 	const { children, first, last } = props;
 	return ( //styles.container é um vetor
-		
 		<View style={[
 			styles.container, 
 			first ? styles.first : null,
@@ -18,7 +17,6 @@ const FormRow = props => {
 	)
 };
 
-//estilo do formulario
 const styles = StyleSheet.create ({
 	container: {
 		backgroundColor:'#ffffff',

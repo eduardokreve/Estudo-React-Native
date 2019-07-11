@@ -6,7 +6,6 @@ import {
 } from 'react-native';
 
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-
 export default class Header extends React.Component {
     render() {
         return (
@@ -30,6 +29,7 @@ const styles = StyleSheet.create({
         shadowOpacity:1, 
         shadowOffset:{height:6,width:0},
         shadowOpacity:0.3
+        //ios
     },
     title: {
         color: '#ffffff',

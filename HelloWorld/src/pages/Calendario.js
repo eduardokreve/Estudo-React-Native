@@ -1,16 +1,16 @@
-import React from 'react';
-import {View, StyleSheet,  TouchableOpacity, Image} from 'react-native'; 
-import { createMaterialTopTabNavigator, createAppContainer} from 'react-navigation'; 
+import React from 'react'
+import {View, StyleSheet,  TouchableOpacity, Image} from 'react-native'
+import { createMaterialTopTabNavigator, createAppContainer} from 'react-navigation'
 
 import GeneralStatusBarColor from '../components/GeneralStatusBarColor'
 import Header from '../components/Header'
 import styleRodape from '../components/styles/Rodape'
 
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
+
 //teste com tabnavigator
 import FirstPage from '../components/Firstpage'
 import SecondPage from '../components/SecondPage'
-
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const TabScreen = createMaterialTopTabNavigator(
 	{
@@ -43,9 +43,9 @@ const TabScreen = createMaterialTopTabNavigator(
 			indicatorStyle: {
 				backgroundColor: '#519387'
 			}
-		},
+		}
 	}
-);
+)
 
 TabScreen.navigationOptions = {
 	header:null
@@ -62,11 +62,10 @@ export default class Calendario extends React.Component {
 			<View>
 				<GeneralStatusBarColor backgroundColor="#519387" barStyle="light-content"/>
 				<View style={{backgroundColor: '#f7f7f7',}}>
-					<View style={styles.Menu}>
+					<View style={styles.menu}>
 						<Header/>
 						<Meses/>
 					</View>   
-
 					<View style={styleRodape.rodape}>
 						<TouchableOpacity onPress={() => { this.props.navigation.openDrawer() }}>
 							<Image style = {styleRodape.icone} 
@@ -74,17 +73,15 @@ export default class Calendario extends React.Component {
 							/>
 						</TouchableOpacity>
 					</View>  
-
 				</View>
 			</View>
-		);
+		)
  	}
 }
 
-
 const styles = StyleSheet.create({
-	Menu: {
+	menu: {
 		width:wp('100%'),
 		height:hp('88%'),
-	},
+	}
 })
