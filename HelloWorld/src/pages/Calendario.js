@@ -9,12 +9,12 @@ import styleRodape from '../components/styles/Rodape'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 
 //teste com tabnavigator
-import FirstPage from '../components/Firstpage'
-import SecondPage from '../components/SecondPage'
+import FirstPage from '../components/pagesCalendario/Firstpage'
+import SecondPage from '../components/pagesCalendario/SecondPage'
 
 const TabScreen = createMaterialTopTabNavigator(
 	{
-	  Janeiro: { screen: FirstPage },
+	    Janeiro: { screen: FirstPage },
 		Fevereiro: { screen: SecondPage },
 		Março: { screen: FirstPage },
 		Abril: { screen: SecondPage },

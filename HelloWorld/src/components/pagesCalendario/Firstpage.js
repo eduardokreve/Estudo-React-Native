@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Text, View, StyleSheet, FlatList , TouchableWithoutFeedback} from 'react-native';
+import React from 'react';
+import { Text, View, StyleSheet, FlatList } from 'react-native';
  
 export default class FirstPage extends React.Component {
   state = {

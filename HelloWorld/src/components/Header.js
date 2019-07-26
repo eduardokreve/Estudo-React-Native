@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
         backgroundColor:'#519387',
         elevation: 5, //android > 5.0
         //ios
-        shadowOpacity:1, 
         shadowOffset:{height:6,width:0},
         shadowOpacity:0.3
         //ios
