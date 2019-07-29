@@ -9,12 +9,17 @@ import styleRodape from '../components/styles/Rodape'
 //Importa o cardapio de cada cidade
 import SelecionaCidade from '../components/pagesCardapio/SelecionaCidade.js'
 import CardapioCerroLargo from '../components/pagesCardapio/CardapioCerroLargo.js'
-
+import CardapioChapeco from '../components/pagesCardapio/CardapioChapeco'
+import CardapioErechim from '../components/pagesCardapio/CardapioErechim'
+import CardapioLaranjeiras from '../components/pagesCardapio/CardapioLaranjeiras'
 
 const Cidades = createStackNavigator (
 	{
 		Home: {screen : SelecionaCidade},
 		CerroLargo: {screen : CardapioCerroLargo},
+		Chapeco: {screen: CardapioChapeco},
+		Erechim: {screen: CardapioErechim},
+		Laranjeiras: {screen: CardapioLaranjeiras}
 	},
 	{
 		initialRouteName: 'Home',
