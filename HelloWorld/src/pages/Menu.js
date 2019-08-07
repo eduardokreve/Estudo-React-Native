@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'
 
 import GeneralStatusBarColor from '../components/GeneralStatusBarColor'
 import Header from '../components/Header'
-import styleRodape from '../components/styles/Rodape'
+import styleRodape from '../components/styles/RodapeStyle'
 
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 export default class Menu extends React.Component {

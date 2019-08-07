@@ -1,5 +1,5 @@
-import { StyleSheet, Platform } from 'react-native';
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { StyleSheet, Platform } from 'react-native'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 
 export default StyleSheet.create({
     rodape:{
@@ -23,6 +23,6 @@ export default StyleSheet.create({
                 width:wp('15%'),
                 bottom:hp('1.75%'),
             }
-        }),
+        })
     }
-});
+})
