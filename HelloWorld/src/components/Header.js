@@ -1,18 +1,18 @@
-import React from 'react';
+import React from 'react'
 import {
     StyleSheet,
     Text, 
     View
-} from 'react-native';
+} from 'react-native'
 
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 export default class Header extends React.Component {
     render() {
         return (
             <View style={styles.header}>
                 <Text style={styles.title}>UFFS</Text>
             </View>
-        );
+        )
     }
 }
 
@@ -24,17 +24,16 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         backgroundColor:'#519387',
-        elevation: 5, //android > 5.0
+        elevation: 2, //android > 5.0
         //ios
-        shadowOffset:{height:6,width:0},
+        shadowOffset:{height:3,width:0},
         shadowOpacity:0.3
-        //ios
     },
     title: {
         color: '#ffffff',
         fontSize: 38,
         fontWeight:'bold',
     }
-});
+})
 
  

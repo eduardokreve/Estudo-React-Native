@@ -14,7 +14,7 @@ export default class SelecionaCidade extends React.Component {
 
                 <TouchableOpacity style={styles.buttonCidade}
                     onPress={() => this.props.navigation.navigate('Chapeco')}>
-                    <Text style={styles.nomeCidade}>Chapeco</Text>
+                    <Text style={styles.nomeCidade}>Chapecó</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.buttonCidade}
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         width: wp('75%'),
         height: hp('8%'),
 		backgroundColor: '#519387',
-        borderRadius: 6,
+        borderRadius: 3,
         alignItems:'center',
         justifyContent: 'center'
     },

@@ -18,7 +18,7 @@ export default class Menu extends React.Component {
 					<View style = {styles.menu}>
 						<Header/>
 						<View style={{flex:1, flexDirection: 'row', justifyContent:'center', alignItems:'center'}}>
-							<Text style = {styles.mensagemMenu}>Seja bem vindo</Text>
+							<Text style = {styles.mensagemMenu}>Seja bem-vindo</Text>
 						</View>
 					</View> 
 					<View style={styleRodape.rodape}>

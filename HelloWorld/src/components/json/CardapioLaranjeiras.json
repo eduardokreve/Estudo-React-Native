@@ -1,0 +1,66 @@
+{
+  "Cardapio": [
+    {
+      "Segunda": [
+        "- Chicória",
+        "- Repolho branco",
+        "- Cenoura",
+        "- Arroz branco",
+        "- Arroz Integral",
+        "- Feijão preto",
+        "- Batata ao sugo",
+        "- Bife bovino à parmegiana (contém glúten e lactose",
+        "- PTS ao xadrez",
+        "- Fruta"
+      ],
+      "Terça":[
+        "- Alface",
+        "- Pepino",
+        "- Tabule c/ abobrinha, cebola e tempero verde (contém glúten)",
+        "- Arroz branco",
+        "- Arroz integral",
+        "- Feijão preto",
+        "- Macarrão ao molho de ervas finas (contém glúten)",
+        "- Lombinho em cubos",
+        "- Bolinho de lentilha c/ aveia",
+        "- Gelatina"
+      ],
+      "Quarta":[
+        "- Almeirão",
+        "- Cenoura",
+        "- Couve-folha c/ cebola cozida",
+        "- Arroz branco",
+        "- Arroz integral",
+        "- Feijão preto",
+        "- Creme de milho (contém lactose)",
+        "- Almôndegas de frango",
+        "- Hambúrguer de PTS",
+        "- Fruta"
+      ],
+      "Quinta":[
+        "- Alface",
+        "- Abobrinha c/ milho",
+        "- Chuchu e cenoura",
+        "- Arroz branco",
+        "- Arroz integral",
+        "- Feijão carioca",
+        "- Macarrão ao alho e óleo (contém glúten)",
+        "- Peito de frango grelhado",
+        "- Charuto de repolho c/ recheio de legumes",
+        "- Salada de frutas"
+      ],
+      "Sexta":[
+        "- Acelga",
+        "- Tomate",
+        "- Beterraba",
+        "- Arroz branco",
+        "- Arroz integral",
+        "- Lentilha",
+        "- Lasanha de brócolis c/ molho branco (contém glúten e lactose)",
+        "- Moída a chinesa",
+        "- Abobrinha recheada c/ PTS",
+        "- Fruta"
+      ]
+    }
+  ]
+}

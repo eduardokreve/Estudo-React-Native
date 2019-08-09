@@ -110,8 +110,6 @@ const styles = StyleSheet.create({
         width:wp('100%'),
         height:hp('13%'),
         backgroundColor:'#f7f7f7',
-        borderColor:'#7a7a7a',
-        borderWidth: 0.3,
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems:'center',
@@ -131,8 +129,6 @@ const styles = StyleSheet.create({
     scrowView: {
         width:wp('100%'),
         height:hp('72%'),
-        borderWidth: 0.3,
-        borderColor:'#7a7a7a',
         backgroundColor:'#f7f7f7',
     },
     touch:{
@@ -157,8 +153,6 @@ const styles = StyleSheet.create({
         width:wp('100%'),
         height:hp('12%'),
         backgroundColor:'#f7f7f7',
-        borderWidth: 0.3,
-        borderColor:'#7a7a7a',
         flexDirection: 'row',
         justifyContent:'space-between',
         alignContent:'center',
@@ -168,14 +162,12 @@ const styles = StyleSheet.create({
         resizeMode: 'contain', 
         width:wp('9.8%'),
         height:hp('9.8%'), 
-        left:wp('3%'),
-        top:hp('0.7%')
+        left:wp('5%')
     },
     menConf:{
         color:'#5c5c5c',
-        fontSize:wp('7%'),
-        fontWeight:'bold',
+        fontSize:wp('5.75%'),
         left:wp('20%'),
-        bottom:hp('7%')
+        bottom:hp('7.5%')
     }
 })

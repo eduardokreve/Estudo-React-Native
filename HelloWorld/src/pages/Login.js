@@ -33,7 +33,7 @@ export default class Login extends React.Component {
 		if (this.state.isLoading) 
 			return <ActivityIndicator/>
 		return (
-			<View style={styles.button}>
+			<View>
 				<TouchableOpacity style={styles.textButton}
 					onPress={() => this.props.navigation.navigate('MenuNavigation')}>
 				<Text style={{color:'white', fontSize:24}}>ENTRAR</Text>
