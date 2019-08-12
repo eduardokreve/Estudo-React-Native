@@ -93,16 +93,16 @@ const TabScreen = createMaterialTopTabNavigator(
 			scrollEnabled: true,
 			labelStyle: {
 				fontSize: 13,
-				color:'white'
+				color:'black'
 			},
 			tabStyle: {
 				width: wp('100%') / 3,
 			},
 			style: {
-				backgroundColor: '#519387',
+				backgroundColor: 'white',
 			},
 			indicatorStyle: {
-				backgroundColor: 'white'
+				backgroundColor: '#519387'
 			}
 		}
 	}

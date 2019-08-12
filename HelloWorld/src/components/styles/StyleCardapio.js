@@ -16,7 +16,7 @@ export default StyleSheet.create({
         alignItems:'center',
         justifyContent: 'center',
         marginTop:5,
-        color: '#7a7a7a',
+        color: '#474747',
         fontSize:22,
         textAlign:'left'
     }
