@@ -1,6 +1,5 @@
 import React from 'react'
-import {Linking , WebView} from 'react-native'
-
+import {WebView} from 'react-native'
 
 export default class Moodle extends React.Component {
     render() {
@@ -8,10 +7,11 @@ export default class Moodle extends React.Component {
         
         return (
             <WebView
-				ref={(ref) => { this.webview = ref; }}
-				source={{ uri }}
-			
-			/>
+                ref={(ref) => { this.webview = ref}}
+                source={{ uri }}
+                scalesPageToFit
+                startInLoadingState
+            />
         )
     }
 }
