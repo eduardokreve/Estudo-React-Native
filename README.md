@@ -50,7 +50,7 @@ OBS: O computador onde o terminal está rodando a aplicação e o dispositivo de
 
 # 4. Possíveis erros
 
-Caso apareça no terminal um erro relacionado ao número de conexões, é necessário parar a execução no terminal e colar o seguinte código.
+Caso apareça no terminal um erro relacionado ao número de conexões, é necessário parar a execução no terminal (CTRL + Z) e colar o seguinte código:
 
     echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
